@@ -365,6 +365,22 @@
     filter: saturate(0.6) drop-shadow(0 0 16px rgba(0, 240, 255, 0.5));
   }
 
+  .hero-figure-2 {
+    top: 10%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 280px;
+    opacity: 0.12;
+  }
+  .hero-figure-2::after {
+    inset: -28px;
+  }
+  .hero-figure-2 img {
+    opacity: 1;
+    filter: saturate(0.6) drop-shadow(0 0 14px rgba(0, 240, 255, 0.4));
+  }
+
 /* ===== Phone Mockup ===== */
 .hero-phone {
   display: flex;
