@@ -104,8 +104,10 @@
 
   .level-tracker__row::before { display: none; }
 
-  .download-content { gap: 1.25rem; }
-  .download-title { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+   .download-content { gap: 1.25rem; }
+   .download-title { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+   .download-cta { width: 100%; }
+   .download-cta .btn { width: 100%; }
 
   .footer-inner {
     flex-direction: column;

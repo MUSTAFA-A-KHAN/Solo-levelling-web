@@ -220,6 +220,31 @@
   box-shadow: 0 0 40px rgba(0, 240, 255, 0.7), 0 0 80px rgba(0, 240, 255, 0.4);
 }
 
+.btn--apk {
+  background: rgba(0, 240, 255, 0.06);
+  color: var(--clr-primary);
+  border: 1.5px solid var(--clr-primary);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+  font-size: 0.95rem;
+  padding: 0.8rem 1.6rem;
+  gap: 0.5rem;
+}
+
+.btn--apk:hover,
+.btn--apk:focus {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(138, 43, 226, 0.45);
+}
+
+.btn__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
 /* ===== Hero Section ===== */
 .hero {
   min-height: 100vh;
@@ -1039,6 +1064,13 @@
   gap: 1.75rem;
   max-width: 720px;
   margin: 0 auto;
+}
+
+.download-cta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
 }
 
 .download-title {
