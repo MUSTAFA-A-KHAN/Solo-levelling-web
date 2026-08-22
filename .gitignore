@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.local
+
+# Misc
+.DS_Store
+Thumbs.db
+.playwright-mcp/
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.swp
