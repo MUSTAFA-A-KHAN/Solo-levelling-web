@@ -339,7 +339,31 @@
   margin: 0;
 }
 
-.hero-cta { gap: 1rem; flex-wrap: wrap; }
+  .hero-cta { gap: 1rem; flex-wrap: wrap; }
+
+  .hero-figure {
+    position: absolute;
+    bottom: 8px;
+    left: 6%;
+    width: 340px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .hero-figure::after {
+    content: '';
+    position: absolute;
+    inset: -34px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.14) 0%, transparent 65%);
+    filter: blur(3px);
+    z-index: -1;
+  }
+  .hero-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.17;
+    filter: saturate(0.6) drop-shadow(0 0 16px rgba(0, 240, 255, 0.5));
+  }
 
 /* ===== Phone Mockup ===== */
 .hero-phone {

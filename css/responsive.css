@@ -70,6 +70,8 @@
     order: -1;
   }
 
+  .hero-figure { display: none; }
+
   .phone {
     width: 220px;
     height: 450px;
