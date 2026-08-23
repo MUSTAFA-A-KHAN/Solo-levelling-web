@@ -70,8 +70,22 @@
     order: -1;
   }
 
-  .hero-figure,
-  .hero-figure-2 { display: none; }
+  .hero-figure-2,
+  .hero-figure-3,
+  .hero-figure-4,
+  .hero-figure-5 { display: none; }
+
+  .hero-figure {
+    bottom: 12px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 200px;
+  }
+
+  .hero-figure img {
+    opacity: 0.22;
+  }
 
   .phone {
     width: 220px;
