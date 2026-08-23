@@ -4,6 +4,64 @@
 (function () {
   'use strict';
 
+  /* ---------- Particle Background ---------- */
+  const initParticles = () => {
+    const container = document.getElementById('particles');
+    if (!container) return;
+
+    const count = 70;
+    const frag = document.createDocumentFragment();
+    const sizes = [1, 2, 3];
+    const colors = ['#00f0ff', '#8a2be2', '#ffffff'];
+
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      const size = sizes[Math.floor(Math.random() * sizes.length)];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const posX = Math.random() * window.innerWidth;
+      const posY = Math.random() * window.innerHeight;
+      const delay = Math.random() * 3;
+      const duration = 3 + Math.random() * 4;
+
+      Object.assign(p.style, {
+        position: 'absolute',
+        left: `${posX}px`,
+        top: `${posY}px`,
+        width: `${size}px`,
+        height: `${size}px`,
+        background: color,
+        borderRadius: '50%',
+        boxShadow: `0 0 ${size * 4}px ${color}`,
+        opacity: Math.random() * 0.5 + 0.3,
+        animation: `particle-pulse ${2 + Math.random() * 2}s ease-in-out infinite ${delay}s`,
+        transform: 'translateZ(0)'
+      });
+      frag.appendChild(p);
+    }
+    container.appendChild(frag);
+
+    let ticking = false;
+    const onMove = (e) => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        const particles = container.querySelectorAll('div');
+        particles.forEach((p, i) => {
+          const dx = mouseX - parseFloat(p.style.left);
+          const dy = mouseY - parseFloat(p.style.top);
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const force = Math.min(20 / (dist + 1), 4);
+          const angle = Math.atan2(dy, dx);
+          p.style.transform = `translate(${Math.cos(angle) * force}px, ${Math.sin(angle) * force}px)`;
+        });
+        ticking = false;
+      });
+    };
+    document.addEventListener('mousemove', onMove);
+  };
+
   /* ---------- Scroll Animations (IntersectionObserver) ---------- */
   const initScrollAnimations = () => {
     const observer = new IntersectionObserver(
@@ -71,9 +129,16 @@
       });
     }, { threshold: 0.45 });
 
-    document.querySelectorAll('.quest-panel__fill, .level-progress__fill').forEach((bar) => {
+    document.querySelectorAll('.stat-bar__fill, .quest-panel__fill, .level-progress__fill').forEach((bar) => {
       observer.observe(bar);
     });
+
+    // Hero phone is visible on load — trigger bar fills immediately
+    setTimeout(() => {
+      document.querySelectorAll('.hero .stat-bar__fill, .hero .quest-item__fill').forEach((bar) => {
+        bar.classList.add('filled');
+      });
+    }, 700);
   };
 
   /* ---------- Sticky Nav Scroll Effect ---------- */
@@ -126,6 +191,7 @@
 
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', () => {
+    initParticles();
     initScrollAnimations();
     initCounters();
     initStatBars();
