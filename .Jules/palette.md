@@ -9,3 +9,7 @@
 ## 2025-02-25 - Form Accessibility
 **Learning:** Placeholders are often used as visual labels in compact designs, but they are insufficient for screen readers and disappear when typing.
 **Action:** Added aria-labels to all form inputs to ensure screen readers always have context, and added visual asterisks to placeholders to denote required fields.
+
+## 2026-08-26 - Redundant Screen Reader Announcements in Labelled Links
+**Learning:** When a link (or button) has an `aria-label` (e.g., "SYS:LEVEL — home"), screen readers will announce that label. If the elements inside the link (like an image with alt text and a span with text) are not hidden, the screen reader may announce them as well, causing redundant and confusing output.
+**Action:** Add `aria-hidden="true"` to decorative visual elements (like logos or text spans) inside an `aria-label`ed parent to ensure screen readers only announce the intended label.
