@@ -52,14 +52,14 @@
                 <div class="glass" id="download-form" style="padding: 2.5rem; margin: 0 auto;">
                     <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.25rem;">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
-                            <input type="text" name="name" placeholder="CALL SIGN" required
+                            <input type="text" name="name" placeholder="CALL SIGN *" aria-label="Call Sign" required
                                    style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-ui); font-size: 0.9rem; outline: none; transition: var(--transition);">
-                            <input type="email" name="email" placeholder="FREQUENCY (EMAIL)" required
+                            <input type="email" name="email" placeholder="FREQUENCY (EMAIL) *" aria-label="Frequency (Email)" required
                                    style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-ui); font-size: 0.9rem; outline: none; transition: var(--transition);">
                         </div>
-                        <input type="text" name="subject" placeholder="SUBJECT" required
+                        <input type="text" name="subject" placeholder="SUBJECT *" aria-label="Subject" required
                                style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-ui); font-size: 0.9rem; outline: none; transition: var(--transition);">
-                        <textarea name="message" placeholder="YOUR MESSAGE" rows="5" required
+                        <textarea name="message" placeholder="YOUR MESSAGE *" aria-label="Your Message" rows="5" required
                                   style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-body); font-size: 0.9rem; outline: none; resize: vertical; transition: var(--transition);"></textarea>
                         <button type="submit" class="btn btn--primary">TRANSMIT</button>
                     </form>
