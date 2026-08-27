@@ -9,3 +9,7 @@
 ## 2025-02-25 - Form Accessibility
 **Learning:** Placeholders are often used as visual labels in compact designs, but they are insufficient for screen readers and disappear when typing.
 **Action:** Added aria-labels to all form inputs to ensure screen readers always have context, and added visual asterisks to placeholders to denote required fields.
+
+## 2025-01-20 - Forms rely heavily on placeholder text instead of labels
+**Learning:** Found a pattern in this design system where form fields use `placeholder` text and `aria-label`s instead of visible `<label>` elements. This is an accessibility issue for cognitive load, as context is lost when typing, and screen readers benefit from explicitly associated labels.
+**Action:** Always verify new forms or inputs explicitly use visible `<label for="...">` elements correctly linked to input IDs, and ensure placeholders are supplementary (e.g., example text) rather than replacing labels entirely.
