@@ -18,6 +18,31 @@
   .quests-grid { grid-template-columns: repeat(2, 1fr); }
 
   .phone { width: 240px; height: 480px; }
+
+  .nav-toggle { display: flex; }
+  .nav-actions .btn { display: none; }
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background: rgba(6, 7, 15, 0.97);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s var(--ease-out);
+  }
+  .nav-menu.open { max-height: 80vh; }
+  .nav-list { flex-direction: column; gap: 0.25rem; align-items: stretch; padding: 0.75rem clamp(1.25rem, 4vw, 2.5rem); }
+  .nav-link { display: block; padding: 0.85rem 0; font-size: 0.9rem; min-height: 44px; }
+  .nav-menu-cta { display: block; padding: 0.5rem clamp(1.25rem, 4vw, 2.5rem) 1.25rem; }
+  .nav-menu-cta .btn { width: 100%; min-height: 48px; }
 }
 
 /* ---------- Desktop large ---------- */
@@ -35,37 +60,6 @@
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-  .nav-toggle { display: flex; }
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    background: rgba(6, 7, 15, 0.96);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border-bottom: 1px solid var(--border);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .4s var(--ease-out);
-  }
-  .nav-menu.open { max-height: 360px; }
-  .nav-list {
-    flex-direction: column;
-    gap: 0.4rem;
-    padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
-    align-items: stretch;
-  }
-  .nav-link {
-    display: block;
-    padding: 0.75rem 0;
-    font-size: 0.85rem;
-    min-height: 44px;
-  }
-  .nav-actions { padding: 0 1.25rem 1.25rem; }
-
   .hero { padding-top: 64px; }
   .hero-container { grid-template-columns: 1fr; }
   .hero-content { align-items: center; text-align: center; }

@@ -169,7 +169,7 @@
       menu.classList.toggle('open');
     });
 
-    document.querySelectorAll('.nav-link').forEach((link) => {
+    document.querySelectorAll('#navMenu a').forEach((link) => {
       link.addEventListener('click', () => {
         menu.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
