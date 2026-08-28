@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MEDIA VAULT &mdash; SYS:LEVEL</title>
+    <meta name="description" content="Scrape and collect Solo Leveling media: images, GIFs, WebP, WebM and MP4 videos from any page. Mobile-first media vault.">
+    <meta name="theme-color" content="#06070f">
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/gallery.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+        <div class="nav-inner container flex-between">
+            <a href="./index.html" class="logo" aria-label="SYS:LEVEL home">
+                <img src="./assets/logo.svg" alt="" aria-hidden="true" class="logo-img">
+                <span class="logo-text">SYS:LEVEL</span>
+            </a>
+            <div class="nav-actions">
+                <a href="./index.html" class="btn btn--ghost btn--sm">BACK TO SYSTEM</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="vault container">
+        <section class="vault-hero">
+            <p class="vault-hero__kicker">// SYSTEM MODULE: MEDIA VAULT</p>
+            <h1 class="vault-hero__title">MEDIA <span>VAULT</span></h1>
+            <p class="vault-hero__sub">Extract every image, GIF, WebP, WebM and MP4 from any web page. Paste a URL &mdash; the System harvests the media.</p>
+        </section>
+
+        <section class="vault-form" aria-label="Scrape a URL">
+            <form id="scrapeForm" class="scrape-form">
+                <div class="scrape-form__row">
+                    <input type="url" id="urlInput" class="scrape-form__input" required
+                        placeholder="https://example.com/solo-leveling" inputmode="url" autocomplete="url"
+                        aria-label="Page URL to scrape">
+                    <button type="submit" class="btn btn--primary scrape-form__btn" id="scrapeBtn">
+                        <span class="scrape-form__btn-label">HARVEST</span>
+                    </button>
+                </div>
+                <div class="scrape-form__presets" role="group" aria-label="Quick sources">
+                    <span class="scrape-form__presets-label">QUICK TARGETS:</span>
+                    <button type="button" class="chip" data-url="https://en.wikipedia.org/wiki/Solo_Leveling">WIKI</button>
+                    <button type="button" class="chip" data-url="https://www.reddit.com/r/sololeveling/">REDDIT (GIF/VID)</button>
+                    <button type="button" class="chip" data-url="https://www.reddit.com/r/sololeveling/top/.json?t=year">REDDIT TOP</button>
+                    <button type="button" class="chip" data-url="https://solo-leveling.fandom.com/wiki/Sung_Jinwoo">FAN WIKI</button>
+                </div>
+            </form>
+            <p class="vault-note">Use only for content you have the right to access. Always respect each site's Terms of Service.</p>
+        </section>
+
+        <section class="vault-form" aria-label="Search the archive">
+            <form id="archiveForm" class="scrape-form">
+                <div class="scrape-form__row">
+                    <input type="text" id="archiveInput" class="scrape-form__input" required
+                        placeholder="search the archive… e.g. sung jinwoo" inputmode="search"
+                        aria-label="Archive search term">
+                    <button type="submit" class="btn btn--primary scrape-form__btn" id="archiveBtn">
+                        <span class="scrape-form__btn-label">SEARCH</span>
+                    </button>
+                </div>
+                <div class="scrape-form__presets" role="group" aria-label="Archive presets">
+                    <span class="scrape-form__presets-label">QUICK SEARCHES:</span>
+                    <button type="button" class="chip" data-q="solo leveling">SOLO LEVELING</button>
+                    <button type="button" class="chip" data-q="sung jinwoo">SUNG JINWOO</button>
+                    <button type="button" class="chip" data-q="shadow monarch">SHADOW MONARCH</button>
+                    <button type="button" class="chip" data-q="arise">ARISE</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="vault-toolbar" id="toolbar" hidden>
+            <div class="vault-filters" role="group" aria-label="Filter media type">
+                <button class="chip chip--active" data-filter="all">ALL <span id="countAll">0</span></button>
+                <button class="chip" data-filter="image">IMAGES <span id="countImage">0</span></button>
+                <button class="chip" data-filter="gif">GIFS <span id="countGif">0</span></button>
+                <button class="chip" data-filter="video">VIDEOS <span id="countVideo">0</span></button>
+            </div>
+            <div class="vault-meta">
+                <span class="vault-meta__status" id="vaultStatus">IDLE</span>
+                <button class="chip" id="downloadAllBtn" type="button">DOWNLOAD ALL</button>
+            </div>
+        </section>
+
+        <section class="vault-grid" id="vaultGrid" aria-live="polite"></section>
+
+        <div class="vault-empty" id="vaultEmpty">
+            <div class="vault-empty__icon">▣</div>
+            <p class="vault-empty__title">VAULT EMPTY</p>
+            <p class="vault-empty__sub">Harvest a URL above to fill the vault with media.</p>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer" hidden>
+        <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">&#10094;</button>
+        <div class="lightbox__stage" id="lightboxStage"></div>
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">&#10095;</button>
+        <div class="lightbox__bar">
+            <a class="btn btn--primary btn--sm" id="lightboxOpen" href="#" target="_blank" rel="noopener">OPEN ORIGINAL</a>
+            <a class="btn btn--ghost btn--sm" id="lightboxDownload" href="#" download>DOWNLOAD</a>
+        </div>
+    </div>
+
+    <script type="module" src="./js/gallery.js"></script>
+</body>
+</html>
