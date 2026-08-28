@@ -306,6 +306,8 @@
       form.reset();
       const note = document.createElement('div');
       note.className = 'form-note';
+      note.setAttribute('role', 'status');
+      note.setAttribute('aria-live', 'polite');
       note.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
       form.appendChild(note);
       setTimeout(() => note.remove(), 5000);
