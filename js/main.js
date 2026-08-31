@@ -1,5 +1,5 @@
 /* ============================================================
-   SYS:LEVEL — Main Script
+   SYS:LEVEL â€” Main Script
    =============================================================*/
 (function () {
   'use strict';
@@ -311,6 +311,35 @@
       note.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
       form.appendChild(note);
       setTimeout(() => note.remove(), 5000);
+      const submitBtn = form.querySelector('button[type="submit"], button:not([type="button"])');
+      let originalText = '';
+      if (submitBtn) {
+        if (submitBtn.disabled) return;
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-disabled', 'true');
+        submitBtn.style.pointerEvents = 'none';
+        submitBtn.style.opacity = '0.7';
+        originalText = submitBtn.textContent;
+        submitBtn.textContent = 'TRANSMITTING...';
+      }
+
+      setTimeout(() => {
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute('aria-disabled');
+          submitBtn.style.pointerEvents = '';
+          submitBtn.style.opacity = '';
+          submitBtn.textContent = originalText;
+        }
+        const note = document.createElement('div');
+        note.className = 'form-note';
+        note.setAttribute('role', 'status');
+        note.setAttribute('aria-live', 'polite');
+        note.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
+        form.appendChild(note);
+        setTimeout(() => note.remove(), 5000);
+      }, 1500);
     });
   };
 
