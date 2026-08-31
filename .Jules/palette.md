@@ -10,6 +10,9 @@
 **Learning:** Placeholders are often used as visual labels in compact designs, but they are insufficient for screen readers and disappear when typing.
 **Action:** Added aria-labels to all form inputs to ensure screen readers always have context, and added visual asterisks to placeholders to denote required fields.
 
+## 2025-01-20 - Forms rely heavily on placeholder text instead of labels
+**Learning:** Found a pattern in this design system where form fields use `placeholder` text and `aria-label`s instead of visible `<label>` elements. This is an accessibility issue for cognitive load, as context is lost when typing, and screen readers benefit from explicitly associated labels.
+**Action:** Always verify new forms or inputs explicitly use visible `<label for="...">` elements correctly linked to input IDs, and ensure placeholders are supplementary (e.g., example text) rather than replacing labels entirely.
 ## 2024-08-28 - ARIA Live Regions for Dynamic Status Updates
 **Learning:** The application extensively uses dynamic DOM manipulation to present status messages (like form submission successes or media harvesting states) to the user. Without ARIA live regions, these updates go completely unnoticed by screen readers, degrading accessibility.
 **Action:** Always wrap dynamic status messages and feedback containers with `role="status"` and `aria-live="polite"` (or `aria-live="assertive"` for critical errors) to ensure assistive technologies announce state changes as they happen.
