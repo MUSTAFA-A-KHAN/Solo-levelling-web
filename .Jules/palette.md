@@ -9,3 +9,7 @@
 ## 2025-02-25 - Form Accessibility
 **Learning:** Placeholders are often used as visual labels in compact designs, but they are insufficient for screen readers and disappear when typing.
 **Action:** Added aria-labels to all form inputs to ensure screen readers always have context, and added visual asterisks to placeholders to denote required fields.
+
+## 2024-11-20 - Async Form Submission Accessibility
+**Learning:** During asynchronous form submissions, screen reader users might not receive feedback if the success or error message is simply appended to the DOM. Using `role="status"` and `aria-live="polite"` ensures that dynamically injected feedback is announced automatically without interrupting the user. Additionally, setting `aria-disabled="true"` on the submit button during the wait provides explicit confirmation of the loading state for assistive technologies.
+**Action:** Always wrap dynamic form feedback in an element with `role="status"` and `aria-live="polite"`, and update the button's disabled state appropriately.
