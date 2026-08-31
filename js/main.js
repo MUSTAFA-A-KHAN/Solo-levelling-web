@@ -1,5 +1,5 @@
 /* ============================================================
-   SYS:LEVEL — Main Script
+   SYS:LEVEL â€” Main Script
    =============================================================*/
 (function () {
   'use strict';
@@ -303,6 +303,14 @@
     if (!form) return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      form.reset();
+      const note = document.createElement('div');
+      note.className = 'form-note';
+      note.setAttribute('role', 'status');
+      note.setAttribute('aria-live', 'polite');
+      note.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
+      form.appendChild(note);
+      setTimeout(() => note.remove(), 5000);
       const submitBtn = form.querySelector('button[type="submit"], button:not([type="button"])');
       let originalText = '';
       if (submitBtn) {

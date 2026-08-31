@@ -85,7 +85,7 @@
                 <button class="chip" data-filter="video">VIDEOS <span id="countVideo">0</span></button>
             </div>
             <div class="vault-meta">
-                <span class="vault-meta__status" id="vaultStatus">IDLE</span>
+                <span class="vault-meta__status" id="vaultStatus" role="status" aria-live="polite">IDLE</span>
                 <button class="chip" id="downloadAllBtn" type="button">DOWNLOAD ALL</button>
             </div>
         </section>
@@ -101,10 +101,10 @@
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer" hidden>
-        <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
-        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">&#10094;</button>
+        <button class="lightbox__close" id="lightboxClose" aria-label="Close" title="Close (Esc)">&times;</button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous" title="Previous (Left Arrow)">&#10094;</button>
         <div class="lightbox__stage" id="lightboxStage"></div>
-        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">&#10095;</button>
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next" title="Next (Right Arrow)">&#10095;</button>
         <div class="lightbox__bar">
             <a class="btn btn--primary btn--sm" id="lightboxOpen" href="#" target="_blank" rel="noopener">OPEN ORIGINAL</a>
             <a class="btn btn--ghost btn--sm" id="lightboxDownload" href="#" download>DOWNLOAD</a>
