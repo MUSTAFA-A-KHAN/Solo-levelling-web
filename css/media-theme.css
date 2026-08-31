@@ -1,0 +1,107 @@
+/* ===== MEDIA THEME — ambient Solo Leveling media woven into site sections ===== */
+/* Media is decorative only: heavily faded, masked, never competing with content. */
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- Shared ambient layer recipe -- */
+.section--stats::before,
+.section--quests::before,
+.section--progression::before,
+.section--health::before,
+.section--download::before,
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .09;
+  filter: saturate(1.15) contrast(1.05);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+/* fade media into the dark background so text always wins */
+.section--stats::after,
+.section--quests::after,
+.section--progression::after,
+.section--health::after,
+.section--download::after,
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, var(--bg, #06070f) 0%, transparent 22%, transparent 72%, var(--bg, #06070f) 100%),
+    radial-gradient(80% 60% at 50% 50%, transparent 30%, rgba(6, 7, 15, .75) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* -- HERO: dramatic full-bleed art, strongest presence -- */
+.hero::before {
+  background-image: url('../assets/media/sl-img-3.jpg');
+  background-position: center 28%;
+  opacity: .14;
+}
+.hero::after {
+  background:
+    linear-gradient(180deg, rgba(6, 7, 15, .9) 0%, transparent 30%, transparent 65%, #06070f 100%),
+    radial-gradient(90% 70% at 70% 40%, transparent 25%, rgba(6, 7, 15, .8) 100%);
+}
+
+/* -- STATS: shadow army wallpaper -- */
+.section--stats::before {
+  background-image: url('../assets/media/sl-img-5.jpg');
+  background-position: center 20%;
+}
+
+/* -- QUESTS: battle scene -- */
+.section--quests::before {
+  background-image: url('../assets/media/sl-img-6.jpg');
+}
+
+/* -- PROGRESSION: monarch art -- */
+.section--progression::before {
+  background-image: url('../assets/media/sl-img-9.jpg');
+  background-position: center 30%;
+}
+
+/* -- HEALTH: character art -- */
+.section--health::before {
+  background-image: url('../assets/media/sl-img-10.jpg');
+}
+
+/* -- DOWNLOAD: strongest call-to-action backdrop -- */
+.section--download::before {
+  background-image: url('../assets/media/sl-img-1.png');
+  opacity: .12;
+  background-position: center 15%;
+}
+
+/* -- respects reduced-motion / data-saver preferences -- */
+@media (prefers-reduced-transparency: reduce) {
+  .hero::before,
+  .section--stats::before,
+  .section--quests::before,
+  .section--progression::before,
+  .section--health::before,
+  .section--download::before { display: none; }
+}
+
+/* -- mobile: soften further so text stays crisp on small screens -- */
+@media (max-width: 640px) {
+  .section--stats::before,
+  .section--quests::before,
+  .section--progression::before,
+  .section--health::before { opacity: .06; }
+  .hero::before { opacity: .1; }
+}
