@@ -38,13 +38,15 @@
 
         <section class="vault-form" aria-label="Scrape a URL">
             <form id="scrapeForm" class="scrape-form">
-                <div class="scrape-form__row">
-                    <input type="url" id="urlInput" class="scrape-form__input" required
-                        placeholder="https://example.com/solo-leveling" inputmode="url" autocomplete="url"
-                        aria-label="Page URL to scrape">
-                    <button type="submit" class="btn btn--primary scrape-form__btn" id="scrapeBtn">
-                        <span class="scrape-form__btn-label">HARVEST</span>
-                    </button>
+                <div class="field">
+                    <label class="label" for="urlInput">TARGET URL *</label>
+                    <div class="scrape-form__row">
+                        <input type="url" id="urlInput" class="scrape-form__input" required
+                            placeholder="https://example.com/solo-leveling" inputmode="url" autocomplete="url">
+                        <button type="submit" class="btn btn--primary scrape-form__btn" id="scrapeBtn">
+                            <span class="scrape-form__btn-label">HARVEST</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="scrape-form__presets" role="group" aria-label="Quick sources">
                     <span class="scrape-form__presets-label">QUICK TARGETS:</span>
@@ -59,13 +61,15 @@
 
         <section class="vault-form" aria-label="Search the archive">
             <form id="archiveForm" class="scrape-form">
-                <div class="scrape-form__row">
-                    <input type="text" id="archiveInput" class="scrape-form__input" required
-                        placeholder="search the archive… e.g. sung jinwoo" inputmode="search"
-                        aria-label="Archive search term">
-                    <button type="submit" class="btn btn--primary scrape-form__btn" id="archiveBtn">
-                        <span class="scrape-form__btn-label">SEARCH</span>
-                    </button>
+                <div class="field">
+                    <label class="label" for="archiveInput">SEARCH QUERY *</label>
+                    <div class="scrape-form__row">
+                        <input type="text" id="archiveInput" class="scrape-form__input" required
+                            placeholder="search the archive… e.g. sung jinwoo" inputmode="search">
+                        <button type="submit" class="btn btn--primary scrape-form__btn" id="archiveBtn">
+                            <span class="scrape-form__btn-label">SEARCH</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="scrape-form__presets" role="group" aria-label="Archive presets">
                     <span class="scrape-form__presets-label">QUICK SEARCHES:</span>
