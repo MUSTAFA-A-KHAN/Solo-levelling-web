@@ -365,6 +365,7 @@ els.form.addEventListener('submit', async (e) => {
   media = media.filter((m) => m.builtin);
   activeFilter = 'all';
   els.btn.disabled = true;
+  els.btn.setAttribute('aria-disabled', 'true');
   els.btn.classList.add('loading');
   setStatus('SCANNINGâ€¦');
   try {
@@ -381,6 +382,7 @@ els.form.addEventListener('submit', async (e) => {
     applyFilter();
   } finally {
     els.btn.disabled = false;
+    els.btn.removeAttribute('aria-disabled');
     els.btn.classList.remove('loading');
   }
 });
@@ -392,6 +394,7 @@ els.archiveForm.addEventListener('submit', async (e) => {
   media = [];
   activeFilter = 'all';
   els.archiveBtn.disabled = true;
+  els.archiveBtn.setAttribute('aria-disabled', 'true');
   els.archiveBtn.classList.add('loading');
   try {
     const n = await searchArchive(q);
@@ -402,6 +405,7 @@ els.archiveForm.addEventListener('submit', async (e) => {
     applyFilter();
   } finally {
     els.archiveBtn.disabled = false;
+    els.archiveBtn.removeAttribute('aria-disabled');
     els.archiveBtn.classList.remove('loading');
   }
 });
