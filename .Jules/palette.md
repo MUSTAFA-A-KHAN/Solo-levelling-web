@@ -19,3 +19,7 @@
 ## 2024-11-20 - Async Form Submission Accessibility
 **Learning:** During asynchronous form submissions, screen reader users might not receive feedback if the success or error message is simply appended to the DOM. Using `role="status"` and `aria-live="polite"` ensures that dynamically injected feedback is announced automatically without interrupting the user. Additionally, setting `aria-disabled="true"` on the submit button during the wait provides explicit confirmation of the loading state for assistive technologies.
 **Action:** Always wrap dynamic form feedback in an element with `role="status"` and `aria-live="polite"`, and update the button's disabled state appropriately.
+
+## 2025-02-28 - Async Form Flow & Accessibility
+**Learning:** For async form submissions, the success notification should only trigger after the async request is fulfilled. Previously, the form was instantly clearing and announcing "TRANSMISSION RECEIVED" before the fake loading phase had even finished. Moreover, using `aria-busy="true"` alongside native `disabled` provides a more accurate semantic representation of a loading state to assistive technologies than redundant `aria-disabled="true"`. Finally, duplicate, unclosed forms in the DOM cause WCAG violations (duplicate IDs) and can attach event listeners to the wrong elements.
+**Action:** Always wrap async form submissions in a `try...finally` block to guarantee state restoration, use `aria-busy="true"` for loading buttons, and verify the DOM is free of malformed or redundant duplicate structures.
