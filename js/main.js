@@ -316,7 +316,7 @@
       if (submitBtn) {
         if (submitBtn.disabled) return;
         submitBtn.disabled = true;
-        submitBtn.setAttribute('aria-disabled', 'true');
+        submitBtn.setAttribute('aria-busy', 'true');
         submitBtn.style.pointerEvents = 'none';
         submitBtn.style.opacity = '0.7';
         originalText = submitBtn.textContent;
@@ -327,7 +327,7 @@
         form.reset();
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.removeAttribute('aria-disabled');
+          submitBtn.removeAttribute('aria-busy');
           submitBtn.style.pointerEvents = '';
           submitBtn.style.opacity = '';
           submitBtn.textContent = originalText;
