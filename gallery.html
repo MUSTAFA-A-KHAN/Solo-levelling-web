@@ -38,10 +38,10 @@
 
         <section class="vault-form" aria-label="Scrape a URL">
             <form id="scrapeForm" class="scrape-form">
+                <label class="label" for="urlInput">PAGE URL TO SCRAPE *</label>
                 <div class="scrape-form__row">
                     <input type="url" id="urlInput" class="scrape-form__input" required
-                        placeholder="https://example.com/solo-leveling" inputmode="url" autocomplete="url"
-                        aria-label="Page URL to scrape">
+                        placeholder="e.g. https://example.com/solo-leveling" inputmode="url" autocomplete="url">
                     <button type="submit" class="btn btn--primary scrape-form__btn" id="scrapeBtn">
                         <span class="scrape-form__btn-label">HARVEST</span>
                     </button>
@@ -59,10 +59,10 @@
 
         <section class="vault-form" aria-label="Search the archive">
             <form id="archiveForm" class="scrape-form">
+                <label class="label" for="archiveInput">ARCHIVE SEARCH TERM *</label>
                 <div class="scrape-form__row">
                     <input type="text" id="archiveInput" class="scrape-form__input" required
-                        placeholder="search the archive… e.g. sung jinwoo" inputmode="search"
-                        aria-label="Archive search term">
+                        placeholder="e.g. sung jinwoo" inputmode="search">
                     <button type="submit" class="btn btn--primary scrape-form__btn" id="archiveBtn">
                         <span class="scrape-form__btn-label">SEARCH</span>
                     </button>
