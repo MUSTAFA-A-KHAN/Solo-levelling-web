@@ -57,49 +57,25 @@ rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vc
                 <h1 class="section-title" data-tag="REACH OUT TO THE SYSTEM">CONTACT</h1>
                 <p class="section-desc">Have a question, found a bug, or want to suggest a feature? The System is listening. Drop a line and we'll respond as soon as we're done grinding our daily quests.</p>
 
-                <div class="glass" id="download-form" style="padding: 2.5rem; margin: 0 auto;">
-                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
-                            <div class="flex-col" style="gap: 0.4rem;">
-                                <label for="name" class="contact-label">Call Sign <span style="color: var(--clr-danger);">*</span></label>
-                                <input type="text" id="name" name="name" placeholder="e.g. Sung Jinwoo" required
-                                       style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-ui); font-size: 0.9rem; outline: none; transition: var(--transition);">
-                            </div>
-                            <div class="flex-col" style="gap: 0.4rem;">
-                                <label for="email" class="contact-label">Frequency (Email) <span style="color: var(--clr-danger);">*</span></label>
-                                <input type="email" id="email" name="email" placeholder="e.g. player@system.app" required
-                                       style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-ui); font-size: 0.9rem; outline: none; transition: var(--transition);">
-                            </div>
-                        </div>
-                        <div class="flex-col" style="gap: 0.4rem;">
-                            <label for="subject" class="contact-label">Subject <span style="color: var(--clr-danger);">*</span></label>
-                            <input type="text" id="subject" name="subject" placeholder="What is your transmission regarding?" required
-                                   style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-ui); font-size: 0.9rem; outline: none; transition: var(--transition);">
-                        </div>
-                        <div class="flex-col" style="gap: 0.4rem;">
-                            <label for="message" class="contact-label">Message <span style="color: var(--clr-danger);">*</span></label>
-                            <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required
-                                      style="background: var(--clr-panel); border: 1px solid var(--clr-panel-border); border-radius: 12px; padding: 0.85rem 1rem; color: var(--clr-text); font-family: var(--font-body); font-size: 0.9rem; outline: none; resize: vertical; transition: var(--transition);"></textarea>
-                        </div>
                 <div class="glass panel">
                     <form id="contactForm">
                         <div class="contact-grid">
                             <div class="field">
                                 <label class="label" for="cf-name">CALL SIGN *</label>
-                                <input type="text" id="cf-name" name="name" placeholder="CALL SIGN *" aria-label="Call Sign" required>
+                                <input type="text" id="cf-name" name="name" placeholder="e.g. Sung Jinwoo" required>
                             </div>
                             <div class="field">
                                 <label class="label" for="cf-email">FREQUENCY (EMAIL) *</label>
-                                <input type="email" id="cf-email" name="email" placeholder="FREQUENCY (EMAIL) *" aria-label="Frequency (Email)" required>
+                                <input type="email" id="cf-email" name="email" placeholder="e.g. player@system.app" required>
                             </div>
                         </div>
                         <div class="field">
                             <label class="label" for="cf-subject">SUBJECT *</label>
-                            <input type="text" id="cf-subject" name="subject" placeholder="SUBJECT *" aria-label="Subject" required>
+                            <input type="text" id="cf-subject" name="subject" placeholder="e.g. Bug Report, Feature Request" required>
                         </div>
                         <div class="field">
                             <label class="label" for="cf-message">YOUR MESSAGE *</label>
-                            <textarea id="cf-message" name="message" placeholder="YOUR MESSAGE *" rows="5" required></textarea>
+                            <textarea id="cf-message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn--primary">TRANSMIT</button>
                     </form>
