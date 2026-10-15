@@ -19,3 +19,7 @@
 ## 2024-11-20 - Async Form Submission Accessibility
 **Learning:** During asynchronous form submissions, screen reader users might not receive feedback if the success or error message is simply appended to the DOM. Using `role="status"` and `aria-live="polite"` ensures that dynamically injected feedback is announced automatically without interrupting the user. Additionally, setting `aria-disabled="true"` on the submit button during the wait provides explicit confirmation of the loading state for assistive technologies.
 **Action:** Always wrap dynamic form feedback in an element with `role="status"` and `aria-live="polite"`, and update the button's disabled state appropriately.
+
+## 2026-10-15 - Enhanced Form Submission & Input Placeholders
+**Learning:** Native `disabled` attributes are sufficient for screen readers to recognize a button's disabled state. Adding `aria-disabled` on top of it is redundant. During active form submission, using `aria-busy="true"` is the proper way to convey the active loading/processing state to assistive technologies.
+**Action:** Replaced `aria-disabled` with `aria-busy` during the 'TRANSMITTING...' state on form submission.
