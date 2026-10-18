@@ -19,3 +19,10 @@
 ## 2024-11-20 - Async Form Submission Accessibility
 **Learning:** During asynchronous form submissions, screen reader users might not receive feedback if the success or error message is simply appended to the DOM. Using `role="status"` and `aria-live="polite"` ensures that dynamically injected feedback is announced automatically without interrupting the user. Additionally, setting `aria-disabled="true"` on the submit button during the wait provides explicit confirmation of the loading state for assistive technologies.
 **Action:** Always wrap dynamic form feedback in an element with `role="status"` and `aria-live="polite"`, and update the button's disabled state appropriately.
+## 2025-02-25 - Redundant ARIA Disabled Attribute
+**Learning:** Setting `aria-disabled="true"` on an element that already natively uses `disabled=true` is redundant. Screen readers automatically announce natively disabled elements. When an element enters a disabled state due to loading, setting `aria-busy="true"` signals that a background process is acting on it, which provides better context than redundant disabled indicators.
+**Action:** Replace redundant `aria-disabled="true"` attributes with `aria-busy="true"` on async submit buttons, and remove it on finalization.
+
+## 2025-02-25 - Redundant Placeholder Form Text
+**Learning:** Repeating the form label redundantly within the placeholder attributes provides no value and can increase cognitive load.
+**Action:** Replace repetitive placeholder attributes with valuable example text (e.g. `placeholder="e.g. Sung Jinwoo"` instead of `placeholder="Call Sign *"`).
