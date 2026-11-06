@@ -303,14 +303,6 @@
     if (!form) return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      form.reset();
-      const note = document.createElement('div');
-      note.className = 'form-note';
-      note.setAttribute('role', 'status');
-      note.setAttribute('aria-live', 'polite');
-      note.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
-      form.appendChild(note);
-      setTimeout(() => note.remove(), 5000);
       const submitBtn = form.querySelector('button[type="submit"], button:not([type="button"])');
       let originalText = '';
       if (submitBtn) {
@@ -332,13 +324,13 @@
           submitBtn.style.opacity = '';
           submitBtn.textContent = originalText;
         }
-        const note = document.createElement('div');
-        note.className = 'form-note';
-        note.setAttribute('role', 'status');
-        note.setAttribute('aria-live', 'polite');
-        note.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
-        form.appendChild(note);
-        setTimeout(() => note.remove(), 5000);
+        const successNote = document.createElement('div');
+        successNote.className = 'form-note';
+        successNote.setAttribute('role', 'status');
+        successNote.setAttribute('aria-live', 'polite');
+        successNote.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
+        form.appendChild(successNote);
+        setTimeout(() => successNote.remove(), 5000);
       }, 1500);
     });
   };
