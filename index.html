@@ -1,528 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYS:LEVEL &mdash; Become The Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>SYS:LEVEL &mdash; Become the player</title>
     <meta name="description" content="Turn your real-world health and daily activities into quests, stats, achievements, and rewards. Download the Android app now.">
-    <meta name="theme-color" content="#06070f">
+    <meta name="theme-color" content="#000000">
     <meta name="color-scheme" content="dark">
+    <style>html{background:#000}</style>
+    <script>document.documentElement.classList.replace('no-js', 'js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29HcmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMGYwZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM4YTJiZTIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmYwMGZmIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ibG9nb0dsb3ciIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNCIgcmVzdWx0PSJibHVyIi8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iYmx1ciIvPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPgogICAgICA8L2ZlTWVyZ2U+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0ibm9uZSIvPgogIDxuIGZpbHRlcj0idXJsKCNsb2dvR2xvdykiPgogICAgPHJlY3QgeD0iNjQiIHk9IjY0IiB3aWR0aD0iMzg0IiBoZWlnaHQ9IjM4NCIgcng9IjU2IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG9nb0dyYWQpIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9IjAuODUiLz4KICA8L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU2IDI1NikiPgogICAgPGcgZmlsdGVyPSJ1cmwoI2xvZ29HbG93KSI+CiAgICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI4MCIgZmlsbD0idXJsKCNsb2dvR3JhZCkiLz4KICAgIDwvZz4KICAgIDxnIGZvbnQtZmFtaWx5PSInQ291cmllciBOZXcnLCBtb25vc3BhY2UiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMTIwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPlM8L2c+CiAgPC9nPgogIDxnIGZvbnQtZmFtaWx5PSJPcmJpdHJvbiwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIxMTIiIGZpbGw9InVybCgjbG9nb0dyYWQpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU2IDQwMCkiPgogICAgWVMKICA8L2c+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNsb2dvR3JhZCkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iOCAxNiIgb3BhY2l0eT0iMC41NSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTYwIiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG9nb0dyYWQpIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjggMTYiIG9wYWNpdHk9IjAuMzUiLz4KPC9zdmc+Cg==" type="image/svg+xml">
-  <script type="module" crossorigin src="/Solo-levelling-web/assets/responsive-B4gKw_QY.js"></script>
-  <script type="module" crossorigin src="/Solo-levelling-web/assets/main-BT2AiLYQ.js"></script>
-  <link rel="stylesheet" crossorigin href="/Solo-levelling-web/assets/responsive-ApjKRueg.css">
-  <link rel="stylesheet" crossorigin href="/Solo-levelling-web/assets/main-DzOuFEqp.css">
-  <link rel="stylesheet" crossorigin href="/Solo-levelling-web/assets/main-1rvFIvpW.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="/Solo-levelling-web/assets/logo--T31AMGH.svg" type="image/svg+xml">
+  <script type="module" crossorigin src="/Solo-levelling-web/assets/main-Df_SnHHm.js"></script>
+  <link rel="modulepreload" crossorigin href="/Solo-levelling-web/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/Solo-levelling-web/assets/main-ICeQe4SA.css">
 </head>
 <body>
-    <!-- ===== BOOT OVERLAY (self-hides via CSS animation) ===== -->
-    <div class="boot" id="boot" aria-hidden="true" style="animation: float-in .6s var(--ease-out) 1.8s reverse forwards; pointer-events: none;">
-        <p class="boot__label">SYSTEM INITIALIZING</p>
-                <div class="boot__track"></div>
+    <div class="veil" aria-hidden="true">
+        <span class="veil__t t-nano">System initializing</span>
+        <span class="veil__ld f-display tnum"><b data-ld>0</b></span>
     </div>
-
-    <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
-    <div class="grid-overlay" aria-hidden="true"></div>
-    <div class="particles" id="particles" aria-hidden="true"></div>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor__t"></span></div>
+    <div class="gridlines" aria-hidden="true"><div class="wrap"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <canvas class="sf" data-starfield aria-hidden="true"></canvas>
 
     <!-- ===== NAV ===== -->
-    <header class="nav" id="nav">
-        <div class="nav-inner container flex-between">
-            <a href="#hero" class="logo" aria-label="SYS:LEVEL &mdash; home">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29HcmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMGYwZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM4YTJiZTIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmYwMGZmIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ibG9nb0dsb3ciIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNCIgcmVzdWx0PSJibHVyIi8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iYmx1ciIvPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPgogICAgICA8L2ZlTWVyZ2U+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0ibm9uZSIvPgogIDxnIGZpbHRlcj0idXJsKCNsb2dvR2xvdykiPgogICAgPHJlY3QgeD0iNjQiIHk9IjY0IiB3aWR0aD0iMzg0IiBoZWlnaHQ9IjM4NCIgcng9IjU2IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG9nb0dyYWQpIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9IjAuODUiLz4KICA8L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU2IDI1NikiPgogICAgPGcgZmlsdGVyPSJ1cmwoI2xvZ29HbG93KSI+CiAgICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI4MCIgZmlsbD0idXJsKCNsb2dvR3JhZCkiLz4KICAgIDwvZz4KICAgIDxnIGZvbnQtZmFtaWx5PSInQ291cmllciBOZXcnLCBtb25vc3BhY2UiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMTIwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPlM8L2c+CiAgPC9nPgogIDxnIGZvbnQtZmFtaWx5PSJPcmJpdHJvbiwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIxMTIiIGZpbGw9InVybCgjbG9nb0dyYWQpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU2IDQwMCkiPgogICAgWVMKICA8L2c+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNsb2dvR3JhZCkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iOCAxNiIgb3BhY2l0eT0iMC41NSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTYwIiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG9nb0dyYWQpIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjggMTYiIG9wYWNpdHk9IjAuMzUiLz4KPC9zdmc+Cg==" alt="" aria-hidden="true" class="logo-img">
-                <span class="logo-text">SYS:LEVEL</span>
+    <header class="nav">
+        <div class="wrap nav__in">
+            <a class="logo" href="#top" aria-label="SYS:LEVEL, home">
+                <svg class="logo__mk" viewBox="0 0 48 48" aria-hidden="true">
+                    <defs>
+                        <pattern id="lgStripe" width="48" height="4" patternUnits="userSpaceOnUse"><rect width="48" height="2.5" fill="currentColor"/></pattern>
+                        <mask id="lgMask"><text x="24" y="42" text-anchor="middle" font-size="54" font-weight="900" fill="#fff" font-family="Archivo, 'Arial Black', sans-serif">S</text></mask>
+                    </defs>
+                    <rect width="48" height="48" fill="url(#lgStripe)" mask="url(#lgMask)"/>
+                </svg>
+                <span class="logo__t">sys:level<span class="acc">.</span></span>
             </a>
-            <nav class="nav-menu" id="navMenu" aria-label="Primary">
-                <ul class="nav-list">
-                    <li><a href="#hero" class="nav-link">SYSTEM</a></li>
-                    <li><a href="#stats" class="nav-link">STATS</a></li>
-                    <li><a href="#quests" class="nav-link">QUESTS</a></li>
-                    <li><a href="#progression" class="nav-link">PROGRESSION</a></li>
-                    <li><a href="#health" class="nav-link">HEALTH</a></li>
-                    <li><a href="#features" class="nav-link">FEATURES</a></li>
-                </ul>
-            <div class="nav-menu-cta"><a href="#download" class="btn btn--primary btn--sm">DOWNLOAD FOR ANDROID</a></div>
-            </nav>
-            <div class="nav-actions flex-center-gap">
-                <a href="#download" class="btn btn--ghost btn--sm">ENTER THE SYSTEM</a>
-                <a href="#download" class="btn btn--primary btn--sm">DOWNLOAD FOR ANDROID</a>
-                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-                    <span class="nav-toggle-bar"></span>
-                    <span class="nav-toggle-bar"></span>
-                    <span class="nav-toggle-bar"></span>
-                </button>
+            <div class="nav__end">
+                <span class="nav__time t-nano"><span class="sr-only">System time: </span><i class="nav__dot" aria-hidden="true"></i><span aria-hidden="true">SYS </span><span data-clock>--:--</span></span>
+                <span class="nav__cta">
+                    <a class="btn btn--light" href="#download" data-magnetic><span class="roll"><span>Download</span><span aria-hidden="true">Download</span></span><span class="btn__ico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                </span>
+                <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span class="menu-btn__t" aria-hidden="true">Menu</span><span class="menu-btn__i" aria-hidden="true"><i></i><i></i></span></button>
             </div>
         </div>
     </header>
 
-    <main>
+    <!-- ===== MENU ===== -->
+    <div class="menu" id="menu" aria-hidden="true" inert>
+        <div class="menu__glow" aria-hidden="true"></div>
+        <div class="menu__in wrap">
+            <nav class="menu__grid" aria-label="All pages">
+                <ul class="menu__links">
+                    <li><a href="#top" aria-current="page"><sup>01</sup><span class="ml">Home</span></a></li>
+                    <li><a href="#system"><sup>02</sup><span class="ml">The System</span></a></li>
+                    <li><a href="#features"><sup>03</sup><span class="ml">Features</span></a></li>
+                    <li><a href="#stats"><sup>04</sup><span class="ml">Stats</span></a></li>
+                    <li><a href="gallery.html"><sup>05</sup><span class="ml">Media vault</span></a></li>
+                    <li><a href="contact.html"><sup>06</sup><span class="ml">Say hello</span></a></li>
+                </ul>
+                <div class="menu__side">
+                    <p class="t-nano faint">Features</p>
+                    <ul>
+                        <li><a class="link" href="#features">Quests</a></li>
+                        <li><a class="link" href="#features">XP and levels</a></li>
+                        <li><a class="link" href="#features">Attributes</a></li>
+                        <li><a class="link" href="#features">Achievements</a></li>
+                        <li><a class="link" href="#features">Streaks</a></li>
+                    </ul>
+                    <p class="t-nano faint">More</p>
+                    <ul>
+                        <li><a class="link" href="#how">How it works</a></li>
+                        <li><a class="link" href="#faq">Questions</a></li>
+                        <li><a class="link" href="https://github.com/MUSTAFA-A-KHAN/Solo-levelling-web" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="menu__foot">
+                <a class="btn btn--primary" href="#download"><span class="roll"><span>Download for Android</span><span aria-hidden="true">Download for Android</span></span><span class="btn__ico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                <span class="t-micro dim">&copy; 2026 SYS:LEVEL</span>
+                <span class="menu__legal t-micro"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></span>
+            </div>
+        </div>
+    </div>
+
+    <main id="main">
         <!-- ===== HERO ===== -->
-        <section class="hero section" id="hero">
-            <div class="container hero-container">
-                <div class="hero-figure" aria-hidden="true">
-                    <img src="/Solo-levelling-web/assets/sung-jinwoo-BmBjM8Xv.png" alt="" loading="lazy" width="340" height="271" data-parallax>
+        <section class="hero" id="top" aria-labelledby="hero-t">
+            <div class="hero__glow" aria-hidden="true"></div>
+            <div class="hero__fig" aria-hidden="true">
+                <img src="/Solo-levelling-web/assets/igris-BfAwxGNT.png" alt="" width="900" height="1073" decoding="async" fetchpriority="high">
+            </div>
+            <div class="hero__shapes" aria-hidden="true">
+                <span class="shp shp--sphere" style="--sz:clamp(48px,6vw,92px)"></span>
+                <span class="shp shp--ring" style="--sz:clamp(60px,7vw,110px)"></span>
+            </div>
+            <div class="wrap hero__in">
+                <h1 class="hero__title f-display" id="hero-t" data-hero>Become<br>the player<span class="acc">.</span></h1>
+                <p class="hero__claim f-display" data-hero data-hero-from="2">Real life.<br><span class="o">Real stats.</span></p>
+                <div class="row hero__cta">
+                    <a class="btn btn--primary" href="#download" data-magnetic><span class="roll"><span>Download for Android</span><span aria-hidden="true">Download for Android</span></span><span class="btn__ico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                    <a class="btn btn--ghost" href="#system" data-magnetic><span class="roll"><span>Enter the System</span><span aria-hidden="true">Enter the System</span></span><span class="btn__ico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
                 </div>
-                <div class="hero-figure hero-figure-2" aria-hidden="true">
-                    <img src="/Solo-levelling-web/assets/sung-jinwoo-shadow-DmGhAwi3.png" alt="" loading="lazy" width="280" height="206" data-parallax>
-                </div>
-                <div class="hero-figure hero-figure-3" aria-hidden="true">
-                    <img src="/Solo-levelling-web/assets/igris-BfAwxGNT.png" alt="" loading="lazy" width="420" height="503" data-parallax>
-                </div>
-                <div class="hero-figure hero-figure-4" aria-hidden="true">
-                    <img src="/Solo-levelling-web/assets/arise-QvGMX5DY.png" alt="" loading="lazy" width="520" height="930" data-parallax>
-                </div>
-                <div class="hero-figure hero-figure-5" aria-hidden="true">
-                    <img src="/Solo-levelling-web/assets/haein-B62Fv4Xc.png" alt="" loading="lazy" width="170" height="180" data-parallax>
-                </div>
+            </div>
+            <div class="wrap hero__foot t-micro">
+                <span class="scroll-cue dim" aria-hidden="true"><i></i>Scroll</span>
+                <span class="t-nano dim">Android &middot; Free &middot; Built for the player</span>
+            </div>
+        </section>
 
-                <div class="hero-content">
-                    <div class="system-init" data-animate>
-                        <span class="system-init__label">SYSTEM</span>
-                        <span class="system-init__text">INITIALIZING</span>
-                        <span class="system-init__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <!-- ===== STATEMENT ===== -->
+        <section class="section statement" id="system" aria-label="About the System">
+            <div class="shapes" aria-hidden="true">
+                <div class="sv sv--a" data-par="0.9"><span class="shp shp--cube"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="sv__lab t-nano"><b class="tnum">01</b>Steps</span></div>
+                <div class="sv sv--b" data-par="0.6"><span class="sv__lab t-nano">Sleep<b class="tnum">02</b></span><span class="shp shp--capsule"></span></div>
+                <div class="sv sv--c" data-par="0.5"><span class="shp shp--cone"></span><span class="sv__lab t-nano"><b class="tnum">03</b>Activity</span></div>
+                <div class="sv sv--d" data-par="0.8"><span class="sv__lab t-nano">Heart rate<b class="tnum">04</b></span><span class="shp shp--ring"></span></div>
+                <div class="sv sv--e" data-par="0.35"><span class="shp shp--sphere"></span><span class="sv__lab t-nano"><b class="tnum">05</b>Streak</span></div>
+            </div>
+            <div class="wrap grid">
+                <div class="c-1-3"><p class="label"><span data-scramble>The System</span></p></div>
+                <div class="c-4-12 stack-6">
+                    <p class="statement__text f-display" data-scrub>Your life takes the shape of a <span class="rot acc" data-rot><span class="sr-only">quest, stat, level, streak, boss fight.</span><span class="rot__w" aria-hidden="true"><span class="rot__i is-on">quest.</span><span class="rot__i">stat.</span><span class="rot__i">level.</span><span class="rot__i">streak.</span><span class="rot__i">boss fight.</span></span></span></p>
+                    <p class="statement__sub t-nano dim" data-rv><span>Real data</span><span>Real XP</span><span>Zero manual input</span></p>
+                    <p class="t-lead dim measure" data-rv>SYS:LEVEL reads your Android health data and turns every step, every hour of sleep and every workout into XP, attributes and quests. No logging, no spreadsheets. Just you, levelling up.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DEPTH 01 ===== -->
+        <section class="depth" data-depth aria-labelledby="dpa-t">
+            <div class="depth__stage">
+                <div class="depth__media">
+                    <img class="depth__img" src="/Solo-levelling-web/assets/sl-img-5-C2gScrtC.jpg" alt="Sung Jinwoo looking up, lit in red and blue, with a shadow soldier behind him" width="890" height="606" loading="lazy" decoding="async">
+                    <span class="depth__scan" aria-hidden="true"></span>
+                    <span class="depth__veil" aria-hidden="true"></span>
+                </div>
+                <div class="wrap depth__meta t-nano" aria-hidden="true"><span>Fig. 01 &middot; Shadow study</span><span class="tnum" data-depth-n>000</span></div>
+                <h2 class="depth__title f-display" id="dpa-t" data-h>Built for<br>the grind.</h2>
+                <p class="depth__cap t-nano"><span>Every step counts &middot;</span> <span>every single day</span></p>
+                <span class="depth__run" aria-hidden="true"></span>
+            </div>
+        </section>
+
+        <!-- ===== FEATURES ===== -->
+        <section class="fv" id="features" aria-labelledby="ft-t">
+            <div class="wrap fv__grid">
+                <div class="fv__head">
+                    <p class="label"><span data-scramble>Features</span></p>
+                    <h2 class="f-display t-h1 fv__h" id="ft-t" data-h>Six ways the System<br>levels you up.</h2>
+                </div>
+                <div class="fv__list">
+                    <a class="srow" href="#quests-detail" data-rv data-srow="0"><span class="srow__n t-nano tnum">01</span><span class="srow__t f-display t-h3">Quests</span><span class="srow__d">Daily activities become missions with real rewards. Four trials, every dawn.</span><span class="srow__go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                    <a class="srow" href="#stats" data-rv data-srow="1"><span class="srow__n t-nano tnum">02</span><span class="srow__t f-display t-h3">XP and levels</span><span class="srow__d">Earn experience from real-world goals and climb from Novice to Player.</span><span class="srow__go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                    <a class="srow" href="#stats" data-rv data-srow="2"><span class="srow__n t-nano tnum">03</span><span class="srow__t f-display t-h3">Attributes</span><span class="srow__d">Strength, Vitality and Agility grow with the way you actually live.</span><span class="srow__go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                    <a class="srow" href="#stats" data-rv data-srow="3"><span class="srow__n t-nano tnum">04</span><span class="srow__t f-display t-h3">Achievements</span><span class="srow__d">Unlock milestones and rare titles. First Steps, Week Warrior, Century.</span><span class="srow__go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                    <a class="srow" href="#stats" data-rv data-srow="4"><span class="srow__n t-nano tnum">05</span><span class="srow__t f-display t-h3">Streaks</span><span class="srow__d">Stay consistent and protect your progress. Miss a day and the System notices.</span><span class="srow__go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                    <a class="srow" href="#sync" data-rv data-srow="5"><span class="srow__n t-nano tnum">06</span><span class="srow__t f-display t-h3">System notifications</span><span class="srow__d">Quest drops, level-ups and stat points, delivered the moment they happen.</span><span class="srow__go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
+                </div>
+                <div class="fv__show" aria-hidden="true">
+                    <div class="fv__card">
+                        <div class="fv__p is-on"><span class="fv__n f-display tnum">01</span><span class="fv__ico"><span class="shp shp--cube"><i></i><i></i><i></i><i></i><i></i><i></i></span></span><p class="fv__name f-display t-h4">Quests</p><p class="fv__d dim">Daily Training, Recovery, The Grind and Will of the Player. Clear them before midnight.</p></div>
+                        <div class="fv__p"><span class="fv__n f-display tnum">02</span><span class="fv__ico"><span class="shp shp--sphere"></span></span><p class="fv__name f-display t-h4">XP and levels</p><p class="fv__d dim">Act. Earn XP. Level up. Become stronger. The ceiling does not exist.</p></div>
+                        <div class="fv__p"><span class="fv__n f-display tnum">03</span><span class="fv__ico"><span class="shp shp--cone"></span></span><p class="fv__name f-display t-h4">Attributes</p><p class="fv__d dim">Steps build Strength. Sleep fuels Vitality. Movement sharpens Agility.</p></div>
+                        <div class="fv__p"><span class="fv__n f-display tnum">04</span><span class="fv__ico"><span class="shp shp--gem"></span></span><p class="fv__name f-display t-h4">Achievements</p><p class="fv__d dim">Milestones that remember what you did, long after the day is over.</p></div>
+                        <div class="fv__p"><span class="fv__n f-display tnum">05</span><span class="fv__ico"><span class="shp shp--ring"></span></span><p class="fv__name f-display t-h4">Streaks</p><p class="fv__d dim">Seven days in a row unlocks Will of the Player. Keep the chain alive.</p></div>
+                        <div class="fv__p"><span class="fv__n f-display tnum">06</span><span class="fv__ico"><span class="shp shp--capsule"></span></span><p class="fv__name f-display t-h4">System notifications</p><p class="fv__d dim">[SYSTEM] Quest completed. +250 XP. New stat point available.</p></div>
                     </div>
-                    <h1 class="hero-title" data-animate>
-                        <span class="hero-title__line">BECOME</span>
-                        <span class="hero-title__line hero-title__line--accent">THE PLAYER</span>
-                    </h1>
-                    <p class="hero-subtitle" data-animate>
-                        Turn your real-world health and daily activities into quests, stats, achievements, and rewards.
-                    </p>
-                    <div class="hero-cta flex-center-gap" data-animate>
-                        <a href="#download" class="btn btn--primary btn--lg">DOWNLOAD FOR ANDROID</a>
-                        <a href="#download" class="btn btn--outline btn--lg">ENTER THE SYSTEM</a>
+                    <div class="fv__foot"><span class="fv__dots"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="t-nano dim">Hover a feature</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MARQUEE ===== -->
+        <div class="mq" data-marquee data-cursor="Drag" aria-hidden="true">
+            <div class="mq__track">
+                <span>Arise</span><i class="mq__dot"></i><span>Level up</span><i class="mq__dot"></i><span>No ordinary days</span><i class="mq__dot"></i><span>Become stronger</span><i class="mq__dot"></i>
+                <span>Arise</span><i class="mq__dot"></i><span>Level up</span><i class="mq__dot"></i><span>No ordinary days</span><i class="mq__dot"></i><span>Become stronger</span><i class="mq__dot"></i>
+            </div>
+        </div>
+
+        <!-- ===== REEL ===== -->
+        <section class="section reel" aria-labelledby="reel-t">
+            <div class="wrap">
+                <div class="between reel__head">
+                    <p class="label"><span data-scramble>Reel &middot; selected moments</span></p>
+                    <a class="link link--under" href="gallery.html">Open the media vault <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></a>
+                </div>
+                <div class="reel__persp">
+                    <a class="reel__frame" href="gallery.html" data-cursor="Play" data-reel aria-label="Open the media vault">
+                        <video src="/Solo-levelling-web/assets/sl-vid-1-Dt_RDSvS.mp4" poster="/Solo-levelling-web/assets/sl-img-10-LUPoCPhS.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                        <span class="reel__play" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.5v9l7-4.5z"/></svg></span>
+                    </a>
+                </div>
+                <h2 class="sr-only" id="reel-t">Reel</h2>
+            </div>
+        </section>
+
+        <!-- ===== DEPTH 02 ===== -->
+        <section class="depth" data-depth aria-labelledby="dpb-t">
+            <div class="depth__stage">
+                <div class="depth__media">
+                    <img class="depth__img" src="/Solo-levelling-web/assets/sl-img-10-LUPoCPhS.jpg" alt="Cha Hae-in mid-strike with her sword raised against a starry sky" width="1192" height="670" loading="lazy" decoding="async">
+                    <span class="depth__scan" aria-hidden="true"></span>
+                    <span class="depth__veil" aria-hidden="true"></span>
+                </div>
+                <div class="wrap depth__meta t-nano" aria-hidden="true"><span>Fig. 02 &middot; Hunter study</span><span class="tnum" data-depth-n>000</span></div>
+                <h2 class="depth__title f-display" id="dpb-t" data-h>Made<br>to ascend.</h2>
+                <p class="depth__cap t-nano"><span>From E-rank &middot;</span> <span>to the top of the ladder</span></p>
+                <span class="depth__run" aria-hidden="true"></span>
+            </div>
+        </section>
+
+        <!-- ===== SPIRAL ARCHIVE ===== -->
+        <section class="spiral" data-spiral data-warp-zone aria-labelledby="spiral-t">
+            <div class="spiral__stage">
+                <div class="spiral__fog" aria-hidden="true"></div>
+                <div class="spiral__meta spiral__meta--top"><div class="wrap between t-nano dim"><span>(04) From the vault</span><span>14 pieces &middot; art, panels, characters</span></div></div>
+                <div class="spiral__space">
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-img-7-ChXOu5vC.jpg" alt="Sung Jinwoo portrait" width="720" height="720" loading="lazy" decoding="async"><figcaption class="t-nano">Shadow Monarch</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-img-9-l0LViy9q.jpg" alt="Cha Hae-in with a lightning sword" width="774" height="1032" loading="lazy" decoding="async"><figcaption class="t-nano">S-rank hunter</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-gif-1-Doet-AoH.gif" alt="Shadow army in purple light" width="498" height="281" loading="lazy" decoding="async"><figcaption class="t-nano">The army</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-img-8-Lc5Dzl00.jpg" alt="Red-haired monarch beneath a winged statue" width="1200" height="1974" loading="lazy" decoding="async"><figcaption class="t-nano">Monarch</figcaption></figure>
+                    <figure class="spiral__card spiral__card--cut"><img src="/Solo-levelling-web/assets/igris-BfAwxGNT.png" alt="Igris, the blood-red commander" width="900" height="1073" loading="lazy" decoding="async"><figcaption class="t-nano">Igris</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-img-6-BxlbdRrx.jpg" alt="Sung Jinwoo in a white shirt and red coat" width="700" height="933" loading="lazy" decoding="async"><figcaption class="t-nano">Off duty</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-img-5-C2gScrtC.jpg" alt="Sung Jinwoo lit in red and blue" width="890" height="606" loading="lazy" decoding="async"><figcaption class="t-nano">Awakening</figcaption></figure>
+                    <figure class="spiral__card spiral__card--cut"><img src="/Solo-levelling-web/assets/arise-QvGMX5DY.png" alt="Chibi Jinwoo surrounded by shadows" width="700" height="1251" loading="lazy" decoding="async"><figcaption class="t-nano">Arise</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-gif-3-DTMuGq9i.gif" alt="Animated panel pointing at a menu" width="498" height="374" loading="lazy" decoding="async"><figcaption class="t-nano">Rest day</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-img-10-LUPoCPhS.jpg" alt="Cha Hae-in mid-strike" width="1192" height="670" loading="lazy" decoding="async"><figcaption class="t-nano">Strike</figcaption></figure>
+                    <figure class="spiral__card spiral__card--cut"><img src="/Solo-levelling-web/assets/haein-B62Fv4Xc.png" alt="Cha Hae-in in a pink cap" width="700" height="747" loading="lazy" decoding="async"><figcaption class="t-nano">Hae-in</figcaption></figure>
+                    <figure class="spiral__card"><img src="/Solo-levelling-web/assets/sl-gif-2-DTV3xJV6.gif" alt="Chibi Jinwoo cheering" width="360" height="360" loading="lazy" decoding="async"><figcaption class="t-nano">Level up</figcaption></figure>
+                    <figure class="spiral__card spiral__card--cut"><img src="/Solo-levelling-web/assets/sung-jinwoo-shadow-DmGhAwi3.png" alt="Sung Jinwoo raising a dagger" width="850" height="950" loading="lazy" decoding="async"><figcaption class="t-nano">Dagger</figcaption></figure>
+                    <figure class="spiral__card spiral__card--cut"><img src="/Solo-levelling-web/assets/sung-jinwoo-BmBjM8Xv.png" alt="Sung Jinwoo looking down" width="1000" height="656" loading="lazy" decoding="async"><figcaption class="t-nano">The player</figcaption></figure>
+                </div>
+                <h2 class="spiral__title f-display" id="spiral-t" data-h>Shadows<br>take shape.</h2>
+                <div class="spiral__meta spiral__meta--bot"><div class="wrap between t-micro dim"><span>Selected images from the media vault.</span><a class="link" href="gallery.html">Open the media vault <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></a></div></div>
+            </div>
+        </section>
+
+        <!-- ===== STATS ===== -->
+        <section class="section" id="stats" aria-labelledby="stats-t">
+            <div class="wrap stack-8">
+                <div class="grid">
+                    <div class="c-1-7 stack-5"><p class="label"><span data-scramble>System statistics</span></p><h2 class="f-display t-display" id="stats-t" data-h>Your life.<br>Your stats.</h2></div>
+                    <p class="c-8-12 t-nano dim" style="align-self:end" data-rv>Sample player, one week in</p>
+                </div>
+                <ul class="kfs" aria-label="A sample player in figures">
+                    <li class="kf" data-rv style="--i:0"><span class="kf__n t-nano tnum" aria-hidden="true">01</span><p class="kf__v f-display"><span data-count="10248">10,248</span></p><p class="kf__t">steps today, feeding your Strength attribute</p><span class="kf__bar" aria-hidden="true" style="--p:.64"></span></li>
+                    <li class="kf" data-rv style="--i:1"><span class="kf__n t-nano tnum" aria-hidden="true">02</span><p class="kf__v f-display"><span data-count="7.4">7.4</span><span class="kf__u">h</span></p><p class="kf__t">of sleep, restoring Vitality and HP overnight</p><span class="kf__bar" aria-hidden="true" style="--p:.82"></span></li>
+                    <li class="kf" data-rv style="--i:2"><span class="kf__n t-nano tnum" aria-hidden="true">03</span><p class="kf__v f-display"><span data-count="48">48</span><span class="kf__u">min</span></p><p class="kf__t">of activity, clearing The Grind before lunch</p><span class="kf__bar" aria-hidden="true" style="--p:.96"></span></li>
+                    <li class="kf" data-rv style="--i:3"><span class="kf__n t-nano tnum" aria-hidden="true">04</span><p class="kf__v f-display"><span data-count="4750">4,750</span><span class="kf__u">XP</span></p><p class="kf__t">earned this week across every quest</p><span class="kf__bar" aria-hidden="true" style="--p:.47"></span></li>
+                    <li class="kf" data-rv style="--i:4"><span class="kf__n t-nano tnum" aria-hidden="true">05</span><p class="kf__v f-display"><span class="kf__u kf__u--pre">Lv</span><span data-count="5">5</span></p><p class="kf__t">and climbing. Next title: Raider at level 10</p><span class="kf__bar" aria-hidden="true" style="--p:.5"></span></li>
+                    <li class="kf" data-rv style="--i:5"><span class="kf__n t-nano tnum" aria-hidden="true">06</span><p class="kf__v f-display"><span data-count="7">7</span><span class="kf__u">days</span></p><p class="kf__t">streak, protected by simply showing up</p><span class="kf__bar" aria-hidden="true" style="--p:.7"></span></li>
+                    <li class="kf" data-rv style="--i:6"><span class="kf__n t-nano tnum" aria-hidden="true">07</span><p class="kf__v f-display"><span data-count="24">24</span><span class="kf__u">/7</span></p><p class="kf__t">the System is watching, syncing in the background</p><span class="kf__bar" aria-hidden="true" style="--p:1"></span></li>
+                    <li class="kf kf--note" data-rv style="--i:7"><span class="kf__ico" aria-hidden="true"><span class="shp shp--ring"></span></span><p class="kf__q f-display">Act. Earn XP.<br>Level up.<br><span class="acc">Become stronger.</span></p><a class="link link--under t-micro" href="#how">How the System works <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== WARP / HOW IT WORKS ===== -->
+        <section class="warp" id="how" data-warp data-warp-zone aria-labelledby="warp-t">
+            <div class="warp__stage">
+                <div class="wrap warp__wrap">
+                    <div class="warp__content">
+                        <p class="label"><span data-scramble>How the System works</span></p>
+                        <h2 class="f-display t-h1 warp__h" id="warp-t" data-h>You move.<br>The System counts.</h2>
+                        <ol class="steps">
+                            <li class="step"><span class="step__n t-nano tnum">01 / Connect</span><h3 class="f-display t-h4">Install and link your health data.</h3></li>
+                            <li class="step"><span class="step__n t-nano tnum">02 / Sync</span><h3 class="f-display t-h4">Steps, sleep and workouts stream in.</h3></li>
+                            <li class="step"><span class="step__n t-nano tnum">03 / Quest</span><h3 class="f-display t-h4">Daily quests turn data into XP.</h3></li>
+                            <li class="step"><span class="step__n t-nano tnum">04 / Ascend</span><h3 class="f-display t-h4">You level up, in real life.</h3></li>
+                        </ol>
+                    </div>
+                    <div class="warp__shapes" aria-hidden="true">
+                        <span class="wp wp-a"><span class="shp shp--cube"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+                        <span class="wp wp-b"><span class="shp shp--cone"></span></span>
+                        <span class="wp wp-c"><span class="shp shp--ring"></span></span>
+                        <span class="wp wp-d"><span class="shp shp--gem"></span></span>
+                        <span class="wp wp-e"><span class="shp shp--capsule"></span></span>
+                        <span class="wp wp-f"><span class="shp shp--sphere"></span></span>
                     </div>
                 </div>
+                <div class="warp__final" aria-hidden="true"><p class="warp__words f-display"><span class="ww" style="--w:0">Act.</span><span class="ww" style="--w:1">Level.</span><span class="ww ww--acc" style="--w:2">Arise.</span></p></div>
+            </div>
+        </section>
 
-                <div class="hero-phone" data-animate>
-                    <div class="phone">
-                        <div class="phone-screen">
-                            <div class="status-screen">
-                                <div class="status-screen__header">
-                                    <div class="status-screen__avatar">
-                                        <div class="avatar-inner" aria-hidden="true"></div>
-                                    </div>
-                                    <div class="status-screen__name">PLAYER</div>
-                                    <div class="status-screen__level">LVL 1</div>
+        <!-- ===== SYNC / SYSTEM WINDOW ===== -->
+        <section class="section platform" id="sync" aria-labelledby="sync-t">
+            <div class="platform__glow" aria-hidden="true"></div>
+            <div class="wrap grid">
+                <div class="c-1-5 stack-5" style="align-self:center">
+                    <p class="label"><span data-scramble>Data sync</span></p>
+                    <h2 class="f-display t-h2" id="sync-t" data-h>The System knows your progress.</h2>
+                    <p class="dim" data-rv>SYS:LEVEL connects to your Android health platform. Every metric the System reads becomes fuel for your ascension: steps, sleep, activity and heart rate. No manual input required.</p>
+                    <ul class="sync-list t-micro" data-rv>
+                        <li><b>Step counts</b><span class="dim">Every stride builds Strength and earns XP.</span></li>
+                        <li><b>Sleep data</b><span class="dim">Quality rest fuels Vitality and triggers recovery quests.</span></li>
+                        <li><b>Activity data</b><span class="dim">Workouts, walks and movement power your daily quests.</span></li>
+                        <li><b>Health metrics</b><span class="dim">Heart rate and body metrics feed your stat lines.</span></li>
+                    </ul>
+                </div>
+                <div class="c-6-12">
+                    <div class="bw" aria-hidden="true" data-chat>
+                        <div class="bw__bar"><span class="bw__dots"><i></i><i></i><i></i></span><span class="bw__tab"><span class="bw__fav">S</span>SYS:LEVEL &middot; Status<span class="bw__x">&times;</span></span><span class="bw__plus">+</span></div>
+                        <div class="bw__url"><span class="bw__addr"><svg viewBox="0 0 16 16"><path d="M5 7V5a3 3 0 0 1 6 0v2M4 7h8v6H4z"/></svg>system://player/status</span></div>
+                        <div class="bw__view">
+                            <div class="app">
+                                <div class="app__bar"><span class="app__icon">S</span><span class="app__name"><b>SYS:LEVEL</b><span><i></i>Connected &middot; Google Fit</span></span><span class="app__lvl t-nano">LVL 5</span></div>
+                                <div class="app__log">
+                                    <p class="msg msg--sys" style="--m:0"><b>[SYSTEM]</b> Daily quest available: <em>Daily Training</em>. Walk 10,000 steps.</p>
+                                    <p class="msg msg--data" style="--m:1"><span>STEP_COUNT</span><span class="tnum">10,248</span><span class="ok">received</span></p>
+                                    <p class="msg msg--sys" style="--m:2"><b>[SYSTEM]</b> Quest completed. <span class="acc">+500 XP</span>. Strength +1.</p>
+                                    <p class="msg msg--data" style="--m:3"><span>SLEEP_DEEP</span><span class="tnum">3.2h</span><span class="ok">Vitality +2</span></p>
+                                    <p class="msg msg--data" style="--m:4"><span>HEART_RATE</span><span class="tnum">52 bpm</span><span class="ok">HP regen</span></p>
+                                    <div class="lvlup" style="--m:5"><span class="t-nano acc">Level up</span><b class="f-display">LV 5 <span class="dim">&rarr;</span> LV 6</b><span class="t-micro dim">New stat point available</span></div>
                                 </div>
-                                <div class="status-screen__stats">
-                                    <div class="stat-row">
-                                        <span class="stat-label">XP</span>
-                                        <div class="stat-value"><span class="stat-amount" data-stat-xp>0</span> / 1000</div>
-                                        <div class="stat-bar"><div class="stat-bar__fill" data-progress style="--progress:0%; width:var(--progress)"></div></div>
-                                    </div>
-                                    <div class="stat-row">
-                                        <span class="stat-label">HP</span>
-                                        <div class="stat-value"><span class="stat-amount">780</span> / 1000</div>
-                                        <div class="stat-bar stat-bar--red"><div class="stat-bar__fill stat-bar__fill--red" style="--progress:78%; width:var(--progress)"></div></div>
-                                    </div>
-                                    <div class="stat-row">
-                                        <span class="stat-label">STRENGTH</span>
-                                        <div class="stat-value"><span class="stat-amount">12</span></div>
-                                    </div>
-                                    <div class="stat-row">
-                                        <span class="stat-label">VITALITY</span>
-                                        <div class="stat-value"><span class="stat-amount">15</span></div>
-                                    </div>
-                                    <div class="stat-row">
-                                        <span class="stat-label">AGILITY</span>
-                                        <div class="stat-value"><span class="stat-amount">9</span></div>
-                                    </div>
-                                </div>
-                                <div class="status-screen__quests">
-                                    <div class="quest-item">
-                                        <div class="quest-item__title">DAILY TRAINING</div>
-                                        <div class="quest-item__progress">8,000 / 10,000 STEPS</div>
-                                        <div class="quest-item__bar"><div class="quest-item__fill" style="--progress:80%; width:var(--progress)"></div></div>
-                                    </div>
-                                    <div class="quest-item">
-                                        <div class="quest-item__title">RECOVERY</div>
-                                        <div class="quest-item__progress">COMPLETED</div>
-                                        <div class="quest-item__bar"><div class="quest-item__fill" style="--progress:100%; width:var(--progress)"></div></div>
-                                    </div>
-                                </div>
-                                <div class="status-screen__meta">
-                                    <div class="meta-item">
-                                        <span class="meta-item__label">STREAK</span>
-                                        <span class="meta-item__value">7</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <span class="meta-item__label">COMPLETED</span>
-                                        <span class="meta-item__value">2/4</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <span class="meta-item__label">STEPS</span>
-                                        <span class="meta-item__value">8,000</span>
-                                    </div>
+                                <div class="app__dock">
+                                    <div class="dock__meta t-nano"><span>Daily quests</span><span class="dock__bar"><i></i></span><span class="tnum">3 of 4</span></div>
+                                    <div class="dock__chips t-micro"><span class="is-done">Daily Training</span><span class="is-done">Recovery</span><span>The Grind</span><span class="is-done">Will of the Player</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="notification notification--top-left" aria-hidden="true">
-                        <span class="notification__title">QUEST COMPLETED</span>
-                        <span class="notification__body">+250 XP</span>
-                    </div>
-                    <div class="notification notification--top-right" aria-hidden="true">
-                        <span class="notification__title">LEVEL UP</span>
-                        <span class="notification__body">NEW STAT POINT AVAILABLE</span>
-                    </div>
-                    <div class="notification notification--bottom-right" aria-hidden="true">
-                        <span class="notification__title">DAILY QUEST</span>
-                        <span class="notification__body">8,000 / 10,000 STEPS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ===== SYSTEM STATS ===== -->
-        <section class="section section--stats" id="stats">
-            <div class="container">
-                <div class="section-header" data-animate>
-                    <h2 class="section-title" data-tag="SYSTEM STATISTICS">YOUR REAL LIFE. YOUR STATS.</h2>
-                    <p class="section-desc">The System transforms your real-world health and activity data into a dynamic RPG-style progression system. Every step, every hour of sleep, and every workout earns you XP, raises your attributes, and pushes your level higher.</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card glass" data-animate>
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v16M4 12h16" stroke="#19e3ff" stroke-width="2" stroke-linecap="round"/></svg>
-                        </div>
-                        <div class="stat-card__label">STEPS</div>
-                        <div class="stat-card__value"><span class="counter" data-count="10248">0</span></div>
-                        <div class="stat-card__bar"><div class="stat-bar" style="--progress:64%"><div style="width:var(--progress)"></div></div></div>
-                    </div>
-                    <div class="stat-card glass" data-animate>
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.5c0 1.1-.9 2-2 2h-.5a3.5 3.5 0 0 1-3-3 3.5 3.5 0 0 1-3 3H7.5a3.5 3.5 0 0 1-3-3 3.5 3.5 0 0 1 3-3H9a3.5 3.5 0 0 1 3 3v1" stroke="#9b5cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7V4a4 4 0 0 0-4 4v3.5a3.5 3.5 0 0 0 3.5 3.5H9" stroke="#9b5cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <div class="stat-card__label">SLEEP</div>
-                        <div class="stat-card__value"><span class="counter" data-count="7.4">0</span><span class="stat-card__unit">h</span></div>
-                        <div class="stat-card__bar"><div class="stat-bar stat-bar--purple" style="--progress:82%"><div style="width:var(--progress)"></div></div></div>
-                    </div>
-                    <div class="stat-card glass" data-animate>
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 17a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM21 9a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" stroke="#21e6a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 14V5a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2z" stroke="#21e6a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <div class="stat-card__label">ACTIVITY</div>
-                        <div class="stat-card__value"><span class="counter" data-count="48">0</span><span class="stat-card__unit">min</span></div>
-                        <div class="stat-card__bar"><div class="stat-bar" style="--progress:96%"><div style="width:var(--progress)"></div></div></div>
-                    </div>
-                    <div class="stat-card glass" data-animate>
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 6h6l-5 4 2 6-6-3-6 3 2-6-5-4h6z" stroke="#ffd166" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <div class="stat-card__label">XP</div>
-                        <div class="stat-card__value"><span class="counter" data-count="4750">0</span></div>
-                        <div class="stat-card__bar"><div class="stat-bar stat-bar--yellow" style="--progress:47%"><div style="width:var(--progress)"></div></div></div>
-                    </div>
-                    <div class="stat-card glass" data-animate>
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2 6h6l-5 4 2 6-6-3-6 3 2-6-5-4h6z" stroke="#ff2d9b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <div class="stat-card__label">LEVEL</div>
-                        <div class="stat-card__value"><span class="counter" data-count="5">0</span></div>
-                        <div class="stat-card__bar"><div class="stat-bar stat-bar--pink" style="--progress:50%"><div style="width:var(--progress)"></div></div></div>
-                    </div>
-                    <div class="stat-card glass" data-animate>
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-3.33-5.5L18 13.5 12 10.27 6 13.5l3.34 5.5L6 21z" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <div class="stat-card__label">STREAK</div>
-                        <div class="stat-card__value"><span class="counter" data-count="7">0</span><span class="stat-card__unit">days</span></div>
-                        <div class="stat-card__bar"><div class="stat-bar stat-bar--orange" style="--progress:70%"><div style="width:var(--progress)"></div></div></div>
-                    </div>
+                    <p class="caption t-nano"><span>Status window</span><span>Sample sync log</span></p>
                 </div>
             </div>
         </section>
 
         <!-- ===== DAILY QUESTS ===== -->
-        <section class="section section--quests" id="quests">
-            <div class="container">
-                <div class="section-header" data-animate>
-                    <h2 class="section-title" data-tag="DAILY MISSIONS">DAILY QUESTS</h2>
-                    <p class="section-desc">Every dawn, the System presents you with four trials. Complete them to earn XP, grow stronger, and ascend beyond your limits.</p>
+        <section class="section" id="quests-detail" aria-labelledby="quests-t">
+            <div class="wrap stack-8">
+                <div class="grid">
+                    <div class="c-1-7 stack-5"><p class="label"><span data-scramble>Daily quests</span></p><h2 class="f-display t-h1" id="quests-t" data-h>Four trials.<br>Every dawn.</h2></div>
+                    <p class="c-8-12 dim" style="align-self:end" data-rv>Complete them to earn XP, grow stronger and push past your limits.</p>
                 </div>
-                <div class="quests-grid">
-                    <article class="quest-panel glass" data-animate>
-                        <div class="quest-panel__header">
-                            <span class="quest-panel__star" aria-hidden="true">&#9733;</span>
-                            <h3 class="quest-panel__title">DAILY TRAINING</h3>
-                            <span class="quest-panel__reward">+500 XP</span>
-                        </div>
-                        <div class="quest-panel__body">
-                            <div class="quest-panel__desc">Complete 10,000 steps today</div>
-                            <div class="quest-panel__progress">
-                                <div class="quest-panel__fill" style="--progress:80%; width:var(--progress)"></div>
-                            </div>
-                            <div class="quest-panel__meta"><span class="quest-panel__meta-text">8,000 / 10,000</span></div>
-                        </div>
-                    </article>
-                    <article class="quest-panel glass quest-panel--complete" data-animate>
-                        <div class="quest-panel__header">
-                            <span class="quest-panel__star" aria-hidden="true">&#9733;</span>
-                            <h3 class="quest-panel__title">RECOVERY</h3>
-                            <span class="quest-panel__reward">+300 XP</span>
-                        </div>
-                        <div class="quest-panel__body">
-                            <div class="quest-panel__desc">Get 7+ hours of sleep</div>
-                            <div class="quest-panel__progress">
-                                <div class="quest-panel__fill quest-panel__fill--complete" style="--progress:100%; width:var(--progress)"></div>
-                            </div>
-                            <div class="quest-panel__meta"><span class="quest-panel__meta-text">COMPLETED</span></div>
-                        </div>
-                    </article>
-                    <article class="quest-panel glass" data-animate>
-                        <div class="quest-panel__header">
-                            <span class="quest-panel__star" aria-hidden="true">&#9733;</span>
-                            <h3 class="quest-panel__title">THE GRIND</h3>
-                            <span class="quest-panel__reward">+400 XP</span>
-                        </div>
-                        <div class="quest-panel__body">
-                            <div class="quest-panel__desc">Complete your daily activity goal</div>
-                            <div class="quest-panel__progress">
-                                <div class="quest-panel__fill" style="--progress:55%; width:var(--progress)"></div>
-                            </div>
-                            <div class="quest-panel__meta"><span class="quest-panel__meta-text">24 / 45 min</span></div>
-                        </div>
-                    </article>
-                    <article class="quest-panel glass" data-animate>
-                        <div class="quest-panel__header">
-                            <span class="quest-panel__star" aria-hidden="true">&#9733;</span>
-                            <h3 class="quest-panel__title">WILL OF THE PLAYER</h3>
-                            <span class="quest-panel__reward">+750 XP</span>
-                        </div>
-                        <div class="quest-panel__body">
-                            <div class="quest-panel__desc">Maintain your streak</div>
-                            <div class="quest-panel__progress">
-                                <div class="quest-panel__fill" style="--progress:100%; width:var(--progress)"></div>
-                            </div>
-                            <div class="quest-panel__meta"><span class="quest-panel__meta-text">7 / 7 days</span></div>
-                        </div>
-                    </article>
-                </div>
+                <ul class="quests">
+                    <li class="quest" data-rv style="--i:0"><span class="t-nano dim tnum">Q-01</span><h3 class="f-display t-h4">Daily Training</h3><p class="dim">Complete 10,000 steps today</p><span class="quest__bar" style="--p:.8"><i></i></span><span class="quest__meta t-nano"><span class="tnum">8,000 / 10,000</span><span class="acc">+500 XP</span></span></li>
+                    <li class="quest is-done" data-rv style="--i:1"><span class="t-nano dim tnum">Q-02</span><h3 class="f-display t-h4">Recovery</h3><p class="dim">Get 7+ hours of sleep</p><span class="quest__bar" style="--p:1"><i></i></span><span class="quest__meta t-nano"><span>Completed</span><span class="acc">+300 XP</span></span></li>
+                    <li class="quest" data-rv style="--i:2"><span class="t-nano dim tnum">Q-03</span><h3 class="f-display t-h4">The Grind</h3><p class="dim">Complete your daily activity goal</p><span class="quest__bar" style="--p:.55"><i></i></span><span class="quest__meta t-nano"><span class="tnum">24 / 45 min</span><span class="acc">+400 XP</span></span></li>
+                    <li class="quest is-done" data-rv style="--i:3"><span class="t-nano dim tnum">Q-04</span><h3 class="f-display t-h4">Will of the Player</h3><p class="dim">Maintain your streak</p><span class="quest__bar" style="--p:1"><i></i></span><span class="quest__meta t-nano"><span class="tnum">7 / 7 days</span><span class="acc">+750 XP</span></span></li>
+                </ul>
             </div>
         </section>
 
-        <!-- ===== PROGRESSION ===== -->
-        <section class="section section--progression" id="progression">
-            <div class="container">
-                <div class="section-header" data-animate>
-                    <h2 class="section-title" data-tag="ASCENSION PATH">NO MORE ORDINARY DAYS.</h2>
-                    <p class="section-desc">The loop is simple, yet unending. Act. Earn XP. Level up. Become stronger. With each ascension, new abilities, stat points, and achievements unlock &mdash; the ceiling does not exist.</p>
-                </div>
-                <div class="loop-row" data-animate>
-                    <div class="loop-step"><span class="loop-step__num">1</span><span class="loop-step__label">ACT</span></div>
-                    <div class="loop-arrow" aria-hidden="true">&rarr;</div>
-                    <div class="loop-step"><span class="loop-step__num">2</span><span class="loop-step__label">EARN XP</span></div>
-                    <div class="loop-arrow" aria-hidden="true">&rarr;</div>
-                    <div class="loop-step"><span class="loop-step__num">3</span><span class="loop-step__label">LEVEL UP</span></div>
-                    <div class="loop-arrow" aria-hidden="true">&rarr;</div>
-                    <div class="loop-step"><span class="loop-step__num">4</span><span class="loop-step__label">BECOME STRONGER</span></div>
-                </div>
-
-                <div class="level-tracker glass" data-animate>
-                    <div class="level-tracker__row">
-                        <div class="level-node level-node--active">
-                            <div class="level-node__num">1</div>
-                            <div class="level-node__label">NOVICE</div>
-                        </div>
-                        <div class="level-node level-node--active">
-                            <div class="level-node__num">10</div>
-                            <div class="level-node__label">RAIDER</div>
-                        </div>
-                        <div class="level-node level-node--active">
-                            <div class="level-node__num">25</div>
-                            <div class="level-node__label">SEMI-BOSS</div>
-                        </div>
-                        <div class="level-node level-node--active">
-                            <div class="level-node__num">50</div>
-                            <div class="level-node__label">BOSS</div>
-                        </div>
-                        <div class="level-node level-node--locked">
-                            <div class="level-node__num">100</div>
-                            <div class="level-node__label">PLAYER</div>
-                        </div>
-                    </div>
-                    <div class="level-progress">
-                        <div class="level-progress__track"><div class="level-progress__fill" style="--progress:47%; width:var(--progress)"></div></div>
-                        <div class="level-progress__meta flex-between">
-                            <div class="level-progress__current">LVL 5</div>
-                            <div class="level-progress__target">NEXT: LVL 6</div>
-                        </div>
-                    </div>
-                    <div class="achievements-row flex-center-gap">
-                        <div class="achievement achievement--unlocked">
-                            <div class="achievement__icon" aria-hidden="true">&#128099;</div>
-                            <div class="achievement__name">FIRST STEPS</div>
-                        </div>
-                        <div class="achievement achievement--unlocked">
-                            <div class="achievement__icon" aria-hidden="true">&#9876;&#65039;</div>
-                            <div class="achievement__name">WEEK WARRIOR</div>
-                        </div>
-                        <div class="achievement achievement--locked">
-                            <div class="achievement__icon" aria-hidden="true">&#128274;</div>
-                            <div class="achievement__name">CENTURY</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ===== HEALTH INTEGRATION ===== -->
-        <section class="section section--health" id="health">
-            <div class="container">
-                <div class="section-header" data-animate>
-                    <h2 class="section-title" data-tag="DATA SYNC">THE SYSTEM KNOWS YOUR PROGRESS.</h2>
-                    <p class="section-desc">SYS:LEVEL integrates directly with your Android health platform. Every real-world metric the System reads becomes the fuel for your digital ascension &mdash; no manual input required.</p>
-                </div>
-                <div class="health-content">
-                    <div class="health-list" data-animate>
-                        <div class="health-item glass">
-                            <div class="health-item__bullet" aria-hidden="true">&#9679;</div>
-                            <h3 class="health-item__title">STEP COUNTS</h3>
-                            <div class="health-item__desc">Every stride builds your Strength attribute and earns XP.</div>
-                        </div>
-                        <div class="health-item glass">
-                            <div class="health-item__bullet" aria-hidden="true">&#9679;</div>
-                            <h3 class="health-item__title">SLEEP DATA</h3>
-                            <div class="health-item__desc">Quality rest fuels Vitality and triggers recovery quests.</div>
-                        </div>
-                        <div class="health-item glass">
-                            <div class="health-item__bullet" aria-hidden="true">&#9679;</div>
-                            <h3 class="health-item__title">ACTIVITY DATA</h3>
-                            <div class="health-item__desc">Workouts, walks, and movement power your daily quests.</div>
-                        </div>
-                        <div class="health-item glass">
-                            <div class="health-item__bullet" aria-hidden="true">&#9679;</div>
-                            <h3 class="health-item__title">HEALTH METRICS</h3>
-                            <div class="health-item__desc">Heart rate and body metrics feed your evolving stat lines.</div>
-                        </div>
-                    </div>
-                    <div class="health-visual" data-animate>
-                        <div class="health-terminal glass">
-                            <div class="health-terminal__bar">[ CONNECTED ] &mdash; Google Fit</div>
-                            <div class="health-terminal__stream">
-                                <span>&rarr; STEP_COUNT: 10,248 [RECEIVED]</span>
-                                <span>&rarr; SLEEP_DEEP: 3.2h [PARSED] &rarr; VITALITY +2</span>
-                                <span>&rarr; HEART_RATE: 52 bpm [VALID] &rarr; HP REGEN</span>
-                                <span>&rarr; ACTIVE_MIN: 48m [CONFIRMED] &rarr; STRENGTH +1</span>
-                                <span class="ok">&rarr; LAST_SYNC: just now [SYSTEM: ONLINE]</span>
-                            </div>
-                        </div>
+        <!-- ===== FAQ ===== -->
+        <section class="section" id="faq" aria-labelledby="faq-t">
+            <div class="wrap grid">
+                <div class="c-1-4 stack-5 sticky-col"><p class="label"><span data-scramble>Questions</span></p><h2 class="f-display t-h1" id="faq-t" data-h>Good<br>to know.</h2></div>
+                <div class="c-5-12">
+                    <div class="faq">
+                        <details><summary>Is SYS:LEVEL free?<span class="pm" aria-hidden="true"></span></summary><div class="a">Yes. Download the APK, install it on your Android phone and start levelling. There is nothing to buy to unlock quests, stats or achievements.</div></details>
+                        <details><summary>Which phones does it run on?<span class="pm" aria-hidden="true"></span></summary><div class="a">Android. The app reads from your phone&rsquo;s health platform, so if your steps and sleep are tracked there, the System can see them.</div></details>
+                        <details><summary>What data does the System read?<span class="pm" aria-hidden="true"></span></summary><div class="a">Step counts, sleep, activity minutes and health metrics such as heart rate. Only what you grant access to, and you can revoke it any time from your phone&rsquo;s settings. See the <a class="link link--under" href="privacy.html">privacy policy</a>.</div></details>
+                        <details><summary>Do I have to log anything by hand?<span class="pm" aria-hidden="true"></span></summary><div class="a">No. Once you connect your health data, everything syncs on its own and converts into XP, quests and attributes. You just live your day.</div></details>
+                        <details><summary>Do I need an account?<span class="pm" aria-hidden="true"></span></summary><div class="a">No. Install the app and grant access to your health data. One tap, no accounts to manage.</div></details>
+                        <details><summary>I found a bug. Where do I report it?<span class="pm" aria-hidden="true"></span></summary><div class="a">Send a transmission through the <a class="link link--under" href="contact.html">contact page</a>, or open an issue on <a class="link link--under" href="https://github.com/MUSTAFA-A-KHAN/Solo-levelling-web" target="_blank" rel="noopener">GitHub</a>.</div></details>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== HOW THE SYSTEM WORKS ===== -->
-        <section class="section" id="how">
-            <div class="container">
-                <div class="section-header" data-animate>
-                    <h2 class="section-title" data-tag="OPERATION FLOW">HOW THE SYSTEM WORKS</h2>
-                    <p class="section-desc">Three steps stand between you and your awakening. The System handles the rest &mdash; silently, automatically, every single day.</p>
+        <!-- ===== CLOSING / DOWNLOAD ===== -->
+        <section class="section closing" id="download" data-warp-zone aria-labelledby="closing-t">
+            <div class="closing__stage" aria-hidden="true"><canvas class="terrain" data-terrain></canvas><div class="closing__veil"></div></div>
+            <div class="wrap closing__grid">
+                <div class="closing__head stack-7">
+                    <p class="label"><span class="label__rule" aria-hidden="true"></span><span data-scramble>Start your journey</span></p>
+                    <h2 class="closing__title f-display" id="closing-t" data-h>The System<br>is waiting.</h2>
                 </div>
-                <div class="features-grid">
-                    <article class="feature-card glass" data-animate>
-                        <div class="loop-step__num" aria-hidden="true">1</div>
-                        <h3 class="feature-card__title">CONNECT</h3>
-                        <div class="feature-card__desc">Install the app and grant access to your Android health data. One tap, no accounts to manage.</div>
-                    </article>
-                    <article class="feature-card glass" data-animate>
-                        <div class="loop-step__num" aria-hidden="true">2</div>
-                        <h3 class="feature-card__title">SYNC</h3>
-                        <div class="feature-card__desc">Steps, sleep, and activity stream into the System and convert into XP, quests, and attributes.</div>
-                    </article>
-                    <article class="feature-card glass" data-animate>
-                        <div class="loop-step__num" aria-hidden="true">3</div>
-                        <h3 class="feature-card__title">ASCEND</h3>
-                        <div class="feature-card__desc">Clear daily quests, hold your streak, and level up. Your real life becomes the progression bar.</div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FEATURES ===== -->
-        <section class="section section--features" id="features">
-            <div class="container">
-                <div class="section-header" data-animate>
-                    <h2 class="section-title" data-tag="SYSTEM CAPABILITIES">SYSTEM FEATURES</h2>
-                    <p class="section-desc">A complete gamified health ecosystem built for the modern warrior.</p>
-                </div>
-                <div class="features-grid">
-                    <article class="feature-card glass" data-animate>
-                        <div class="feature-card__icon" aria-hidden="true">&#9876;&#65039;</div>
-                        <h3 class="feature-card__title">QUESTS</h3>
-                        <div class="feature-card__desc">Turn daily activities into missions with meaningful rewards.</div>
-                    </article>
-                    <article class="feature-card glass" data-animate>
-                        <div class="feature-card__icon" aria-hidden="true">&#128202;</div>
-                        <h3 class="feature-card__title">XP &amp; LEVELS</h3>
-                        <div class="feature-card__desc">Earn experience from completing real-world goals.</div>
-                    </article>
-                    <article class="feature-card glass" data-animate>
-                        <div class="feature-card__icon" aria-hidden="true">&#128170;</div>
-                        <h3 class="feature-card__title">ATTRIBUTES</h3>
-                        <div class="feature-card__desc">Build your character through consistent activity.</div>
-                    </article>
-                    <article class="feature-card glass" data-animate>
-                        <div class="feature-card__icon" aria-hidden="true">&#127942;</div>
-                        <h3 class="feature-card__title">ACHIEVEMENTS</h3>
-                        <div class="feature-card__desc">Unlock milestones and rare achievements.</div>
-                    </article>
-                    <article class="feature-card glass" data-animate>
-                        <div class="feature-card__icon" aria-hidden="true">&#128293;</div>
-                        <h3 class="feature-card__title">STREAKS</h3>
-                        <div class="feature-card__desc">Stay consistent and protect your progress.</div>
-                    </article>
-                    <article class="feature-card glass" data-animate>
-                        <div class="feature-card__icon" aria-hidden="true">&#128276;</div>
-                        <h3 class="feature-card__title">SYSTEM NOTIFICATIONS</h3>
-                        <div class="feature-card__desc">Receive important quest and progression updates.</div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== DOWNLOAD ===== -->
-        <section class="section section--download" id="download">
-            <div class="container">
-                <div class="download-content" data-animate>
-                    <h2 class="download-title" data-tag="THE SYSTEM IS WAITING"><span class="highlight">YOUR JOURNEY BEGINS NOW.</span></h2>
-                    <p class="download-subtitle">The System is waiting.</p>
-                    <div class="download-cta flex-center-gap">
-                        <a href="https://raw.githubusercontent.com/MUSTAFA-A-KHAN/Solo-levelling-web/main/app-debug.apk" class="btn btn--primary btn--xl">DOWNLOAD THE APP</a>
-                        <a href="https://raw.githubusercontent.com/MUSTAFA-A-KHAN/Solo-levelling-web/main/app-debug.apk"
-                           class="btn btn--apk"
-                           download
-                           aria-label="Download the SYS:LEVEL APK directly">
-                            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 13l3 3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <line x1="12" y1="16" x2="12" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            DOWNLOAD APK
-                        </a>
+                <div class="closing__body stack-6" data-rv>
+                    <p class="t-lead dim measure">Free for Android. Install the APK, connect your health data and receive your first daily quest today. Your journey begins now.</p>
+                    <div class="row">
+                        <a class="btn btn--primary" href="https://raw.githubusercontent.com/MUSTAFA-A-KHAN/Solo-levelling-web/main/app-debug.apk" data-magnetic><span class="roll"><span>Download the app</span><span aria-hidden="true">Download the app</span></span><span class="btn__ico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3v9M4 8.5 8 12.5l4-4"/></svg></span></a>
+                        <a class="btn btn--ghost" href="https://raw.githubusercontent.com/MUSTAFA-A-KHAN/Solo-levelling-web/main/app-debug.apk" download aria-label="Download the SYS:LEVEL APK directly" data-magnetic><span class="roll"><span>Download APK</span><span aria-hidden="true">Download APK</span></span><span class="btn__ico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3v9M4 8.5 8 12.5l4-4"/></svg></span></a>
                     </div>
-                    <div class="download-meta flex-center-gap">
-                        <span class="download-meta__item">Android</span>
-                        <span class="download-meta__sep" aria-hidden="true">&bull;</span>
-                        <span class="download-meta__item">Free</span>
-                        <span class="download-meta__sep" aria-hidden="true">&bull;</span>
-                        <span class="download-meta__item">Built for the Player</span>
-                    </div>
-                    <div class="download-badges flex-center-gap">
-                        <div class="qr-placeholder glass">
-                            <div class="qr-placeholder__content">
-                                <span class="qr-placeholder__label">QR CODE</span>
-                                <img src="/Solo-levelling-web/assets/qr-D5mNHdid.svg" alt="Download QR code" class="qr-placeholder__img" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                        <div class="play-badge glass">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgODAiIHdpZHRoPSIyNDAiIGhlaWdodD0iODAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwbGF5R3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBmMGZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhhMmJlMiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjI0MCIgaGVpZ2h0PSI4MCIgcng9IjE2IiBmaWxsPSJ1cmwoI3BsYXlHcmFkKSIgZmlsdGVyPSJ1cmwoI3NoYWRvdykiLz4KICA8ZyBmaWxsPSIjZmZmIj4KICAgIDxwYXRoIGQ9Ik01NSA1NUw3MCA0MEw1NSAyNVY1NVoiLz4KICAgIDx0ZXh0IHg9IjgwIiB5PSI0NSIgZm9udC1mYW1pbHk9IidSb2JvdG8nLHtzYW5zLXNlcmlmfSIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2ZmZiI+UGxheTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI2MiIgZm9udC1mYW1pbHk9IidSb2JvdG8nLHtzYW5zLXNlcmlmfSIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC45Ij5TdG9yZTwvdGV4dD4KICA8L2c+CiAgPHRleHQgeD0iMTgwIiB5PSI0NyIgZm9udC1mYW1pbHk9IidSb2JvdG8nLHtzYW5zLXNlcmlmfSIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+R0VUPC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iNjQiIGZvbnQtZmFtaWx5PSInUm9ib3RvJyx7c2Fucy1zZXJpZn0iIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuOSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+aXQgb248L3RleHQ+Cjwvc3ZnPgo=" alt="Get it on Google Play" class="play-badge__img" onerror="this.style.display='none'">
-                            <span class="play-badge__fallback">GET IT ON<br>PLAY STORE</span>
-                        </div>
+                    <div class="qr">
+                        <img src="/Solo-levelling-web/assets/qr-D5mNHdid.svg" alt="QR code linking to the APK download" width="88" height="88" loading="lazy">
+                        <p class="t-nano dim">Scan to download<br><span class="faint">Android &middot; Free</span></p>
                     </div>
                 </div>
             </div>
@@ -530,24 +389,30 @@
     </main>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container footer-inner flex-between">
-            <div class="footer-brand flex-center-gap">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29HcmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMGYwZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM4YTJiZTIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmYwMGZmIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ibG9nb0dsb3ciIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNCIgcmVzdWx0PSJibHVyIi8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iYmx1ciIvPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPgogICAgICA8L2ZlTWVyZ2U+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0ibm9uZSIvPgogIDxnIGZpbHRlcj0idXJsKCNsb2dvR2xvdykiPgogICAgPHJlY3QgeD0iNjQiIHk9IjY0IiB3aWR0aD0iMzg0IiBoZWlnaHQ9IjM4NCIgcng9IjU2IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG9nb0dyYWQpIiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9IjAuODUiLz4KICA8L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU2IDI1NikiPgogICAgPGcgZmlsdGVyPSJ1cmwoI2xvZ29HbG93KSI+CiAgICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI4MCIgZmlsbD0idXJsKCNsb2dvR3JhZCkiLz4KICAgIDwvZz4KICAgIDxnIGZvbnQtZmFtaWx5PSInQ291cmllciBOZXcnLCBtb25vc3BhY2UiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMTIwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPlM8L2c+CiAgPC9nPgogIDxnIGZvbnQtZmFtaWx5PSJPcmJpdHJvbiwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIxMTIiIGZpbGw9InVybCgjbG9nb0dyYWQpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU2IDQwMCkiPgogICAgWVMKICA8L2c+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNsb2dvR3JhZCkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iOCAxNiIgb3BhY2l0eT0iMC41NSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTYwIiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG9nb0dyYWQpIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjggMTYiIG9wYWNpdHk9IjAuMzUiLz4KPC9zdmc+Cg==" alt="" aria-hidden="true" class="footer-logo logo-img">
-                <span class="footer-brand__name logo-text">SYS:LEVEL</span>
+    <footer class="foot">
+        <div class="foot__depth" aria-hidden="true"><i class="foot__planet"></i><i class="foot__moon"></i><span class="foot__ground"><i class="foot__floor"></i></span></div>
+        <div class="wrap">
+            <div class="foot__top">
+                <p class="foot__claim f-display">Become the player.<br><span class="dim">Real life. Real stats.</span></p>
+                <a class="btn btn--primary" href="#download" data-magnetic><span class="roll"><span>Download</span><span aria-hidden="true">Download</span></span><span class="btn__ico" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span></a>
             </div>
-            <div class="footer-message">SYSTEM ONLINE</div>
-            <nav class="footer-links flex-center-gap" aria-label="Footer">
-                <a href="#download" class="footer-link">Download</a>
-                <a href="#features" class="footer-link">Features</a>
-                <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                <a href="terms.html" class="footer-link">Terms</a>
-                <a href="contact.html" class="footer-link">Contact</a>
-                <a href="https://github.com/MUSTAFA-A-KHAN/Solo-levelling-web" class="footer-link" rel="noopener">GitHub</a>
-            </nav>
-        </div>
-        <div class="footer-bottom container flex-center">
-            <span class="footer-copy">&copy; 2026 SYS:LEVEL. The System is always watching.</span>
+            <div class="foot__cols">
+                <div><h2 class="foot__h">App</h2><ul><li>SYS:LEVEL</li><li class="dim">Gamified health for Android</li><li class="dim">Free &middot; Built for the player</li></ul></div>
+                <div><h2 class="foot__h">Pages</h2><ul><li><a class="link" href="#top">Home</a></li><li><a class="link" href="#features">Features</a></li><li><a class="link" href="#stats">Stats</a></li><li><a class="link" href="gallery.html">Media vault</a></li><li><a class="link" href="contact.html">Contact</a></li></ul></div>
+                <div><h2 class="foot__h">Features</h2><ul><li><a class="link" href="#quests-detail">Quests</a></li><li><a class="link" href="#stats">XP and levels</a></li><li><a class="link" href="#stats">Attributes</a></li><li><a class="link" href="#features">Achievements</a></li><li><a class="link" href="#features">Streaks</a></li></ul></div>
+                <div><h2 class="foot__h">Contact</h2><ul>
+                    <li><a class="fcx" href="mailto:support@syslevel.app"><span class="fcx__i" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2.5 4h11v8h-11zM2.5 4.5 8 9l5.5-4.5"/></svg></span><span>support@syslevel.app</span></a></li>
+                    <li><a class="fcx" href="https://github.com/MUSTAFA-A-KHAN/Solo-levelling-web" target="_blank" rel="noopener"><span class="fcx__i" aria-hidden="true"><svg class="is-fill" viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 0 0-2 12.7c.3 0 .4-.2.4-.4v-1.3c-1.8.4-2.2-.8-2.2-.8-.3-.7-.7-1-.7-1-.6-.4 0-.4 0-.4.7 0 1 .7 1 .7.6 1 1.6.7 2 .5 0-.4.2-.7.4-.9-1.4-.2-3-.7-3-3.2 0-.7.3-1.3.7-1.7-.1-.2-.3-.8.1-1.7 0 0 .5-.2 1.8.7a6 6 0 0 1 3.2 0c1.3-.9 1.8-.7 1.8-.7.4.9.2 1.5.1 1.7.4.4.7 1 .7 1.7 0 2.5-1.5 3-3 3.2.3.2.5.6.5 1.2v1.8c0 .2.1.4.4.4A6.5 6.5 0 0 0 8 1.5z"/></svg></span><span>GitHub</span></a></li>
+                    <li class="foot__go"><a class="link" href="contact.html">Send a transmission <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></a></li>
+                </ul></div>
+            </div>
+            <div class="foot__base t-nano">
+                <span>&copy; 2026 SYS:LEVEL &middot; The System is always watching</span>
+                <span class="foot__phon">/s&#618;s &#712;l&#603;v.&#601;l/</span>
+                <span class="tnum">LVL 005 &middot; SYS <span data-clock>--:--</span></span>
+                <span class="foot__legal"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></span>
+                <button class="grid-toggle" type="button" data-grid-toggle aria-pressed="false">Grid (G)</button>
+            </div>
         </div>
     </footer>
 
