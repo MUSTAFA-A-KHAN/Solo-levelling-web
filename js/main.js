@@ -14,7 +14,7 @@
     const count = 70;
     const frag = document.createDocumentFragment();
     const sizes = [1, 2, 3];
-    const colors = ['#00f0ff', '#8a2be2', '#ffffff'];
+    const colors = ['#ff00ff', '#ffffff', '#ffffff'];
 
     for (let i = 0; i < count; i++) {
       const p = document.createElement('div');
