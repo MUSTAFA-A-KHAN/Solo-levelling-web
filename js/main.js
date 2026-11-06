@@ -301,10 +301,12 @@
   const initContactForm = () => {
     const form = document.getElementById('contactForm');
     if (!form) return;
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
       const submitBtn = form.querySelector('button[type="submit"], button:not([type="button"])');
       let originalText = '';
+
       if (submitBtn) {
         if (submitBtn.disabled) return;
         submitBtn.disabled = true;
@@ -315,8 +317,19 @@
         submitBtn.textContent = 'TRANSMITTING...';
       }
 
-      setTimeout(() => {
+      try {
+        // Simulate async form submission
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
         form.reset();
+        const note = document.createElement('div');
+        note.className = 'form-note';
+        note.setAttribute('role', 'status');
+        note.setAttribute('aria-live', 'polite');
+        note.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
+        form.appendChild(note);
+        setTimeout(() => note.remove(), 5000);
+      } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.removeAttribute('aria-busy');
@@ -324,14 +337,7 @@
           submitBtn.style.opacity = '';
           submitBtn.textContent = originalText;
         }
-        const successNote = document.createElement('div');
-        successNote.className = 'form-note';
-        successNote.setAttribute('role', 'status');
-        successNote.setAttribute('aria-live', 'polite');
-        successNote.textContent = 'TRANSMISSION RECEIVED. We will reply soon.';
-        form.appendChild(successNote);
-        setTimeout(() => successNote.remove(), 5000);
-      }, 1500);
+      }
     });
   };
 
