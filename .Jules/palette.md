@@ -19,3 +19,6 @@
 ## 2024-11-20 - Async Form Submission Accessibility
 **Learning:** During asynchronous form submissions, screen reader users might not receive feedback if the success or error message is simply appended to the DOM. Using `role="status"` and `aria-live="polite"` ensures that dynamically injected feedback is announced automatically without interrupting the user. Additionally, setting `aria-disabled="true"` on the submit button during the wait provides explicit confirmation of the loading state for assistive technologies.
 **Action:** Always wrap dynamic form feedback in an element with `role="status"` and `aria-live="polite"`, and update the button's disabled state appropriately.
+## 2025-03-02 - Modal Dialog Focus Management
+**Learning:** When custom modal dialogs (like lightboxes) open, keyboard and screen reader focus remains on the element that triggered it (often behind the modal). When the modal closes, focus might be lost, resetting the user to the top of the page. This breaks keyboard navigation and causes significant frustration.
+**Action:** Always implement focus management for custom dialogs (`role="dialog"`). Store `document.activeElement` before opening, move focus into the dialog (e.g., to the close button or first interactive element) upon opening, and restore focus to the stored element when closing.
