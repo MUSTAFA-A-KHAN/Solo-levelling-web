@@ -305,7 +305,12 @@ function buildCard(m, i) {
 
 /* ---------- lightbox ---------- */
 
+let lastFocusedElement = null;
+
 function openLightbox(i) {
+  if (els.lightbox.hidden) {
+    lastFocusedElement = document.activeElement;
+  }
   current = i;
   const m = filtered[i];
   if (!m) return;
@@ -324,12 +329,17 @@ function openLightbox(i) {
   els.lbDownload.download = m.name;
   els.lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
+  els.lbClose.focus();
 }
 
 function closeLightbox() {
   els.lightbox.hidden = true;
   els.lbStage.innerHTML = '';
   document.body.style.overflow = '';
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
 }
 
 function step(dir) {
